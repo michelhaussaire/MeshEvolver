@@ -10,3 +10,5 @@ crate-type = ["cdylib"]
 
 [dependencies]
 pyo3 = { version = "0.27", features = ["extension-module"] }
+noise = "0.9"
+rand = "0.8"
