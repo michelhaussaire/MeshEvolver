@@ -12,3 +12,5 @@ crate-type = ["cdylib"]
 pyo3 = { version = "0.27", features = ["extension-module"] }
 noise = "0.9"
 rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
