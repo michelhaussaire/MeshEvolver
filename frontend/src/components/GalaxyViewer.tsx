@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -11,49 +11,80 @@ interface GalaxyViewerProps {
 }
 
 const GalaxyViewer: React.FC<GalaxyViewerProps> = ({ positions, colors, sizes, selected, onClick }) => {
-  const meshRef = useRef<THREE.Points>(null);
-  const geometryRef = useRef<THREE.BufferGeometry>(null);
+  const pointsRef = useRef<THREE.Points>(null);
+  const groupRef = useRef<THREE.Group>(null);
 
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += 0.001;
-    }
-  });
-
-  if (!geometryRef.current) {
-    const geometry = new THREE.BufferGeometry();
+  const geometry = useMemo(() => {
+    const geo = new THREE.BufferGeometry();
     const positionArray = new Float32Array(positions);
     const colorArray = new Float32Array(colors);
     const sizeArray = new Float32Array(sizes);
     
-    geometry.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
-    geometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
-    geometry.setAttribute('size', new THREE.BufferAttribute(sizeArray, 1));
+    geo.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
+    geo.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+    geo.setAttribute('size', new THREE.BufferAttribute(sizeArray, 1));
     
-    geometryRef.current = geometry;
-  }
+    // Centrar la geometría
+    geo.computeBoundingSphere();
+    const center = geo.boundingSphere?.center;
+    if (center) {
+      geo.translate(-center.x, -center.y, -center.z);
+    }
+    
+    return geo;
+  }, [positions, colors, sizes]);
+
+  const starTexture = useMemo(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    
+    if (!ctx) return null;
+
+    const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+    gradient.addColorStop(0.2, 'rgba(255, 255, 255, 0.8)');
+    gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.2)');
+    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 64, 64);
+    
+    return new THREE.CanvasTexture(canvas);
+  }, []);
+
+  useFrame((_) => {
+    if (pointsRef.current) {
+      pointsRef.current.rotation.y += 0.0008;
+      pointsRef.current.rotation.z += 0.0002;
+    }
+  });
 
   return (
-    <group>
+    <group ref={groupRef} scale={[1, 1, 1]}>
       <points 
-        ref={meshRef}
-        geometry={geometryRef.current}
+        ref={pointsRef}
+        geometry={geometry}
         onClick={onClick}
       >
         <pointsMaterial 
-          size={1}
+          size={0.8}
           vertexColors
           sizeAttenuation={true}
           transparent={true}
-          opacity={selected ? 1.0 : 0.8}
+          opacity={selected ? 1.0 : 0.85}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
+          map={starTexture}
+          alphaTest={0.001}
         />
       </points>
+      
       {selected && (
-        <mesh rotation={[0, 0, 0]}>
-          <ringGeometry args={[90, 92, 64]} />
-          <meshBasicMaterial color="#818cf8" transparent opacity={0.3} />
+        <mesh rotation={[Math.PI / 2, 0, 0]} scale={[1.05, 1.05, 1.05]}>
+          <ringGeometry args={[85, 87, 64]} />
+          <meshBasicMaterial color="#a78bfa" transparent opacity={0.5} blending={THREE.AdditiveBlending} side={THREE.DoubleSide} />
         </mesh>
       )}
     </group>

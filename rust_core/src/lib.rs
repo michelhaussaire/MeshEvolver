@@ -160,6 +160,8 @@ struct GalaxyGenome {
     #[pyo3(get, set)]
     ellipticity: f64,
     #[pyo3(get, set)]
+    thickness: f64,
+    #[pyo3(get, set)]
     seed: u32,
 }
 
@@ -178,6 +180,7 @@ impl GalaxyGenome {
             color_temperature,
             rotation_speed,
             ellipticity,
+            thickness: 0.2, // Default
             seed,
         }
     }
@@ -194,6 +197,7 @@ impl GalaxyGenome {
             color_temperature: rng.gen_range(2000.0..10000.0),
             rotation_speed: rng.gen_range(0.0..1.0),
             ellipticity: rng.gen_range(0.0..1.0),
+            thickness: rng.gen_range(0.05..0.4),
             seed: rng.gen(),
         }
     }
@@ -499,7 +503,12 @@ fn generate_galaxy_points(genome: &GalaxyGenome) -> GalaxyPoints {
         
         let x = (radius + spread * rng.gen_range(-1.0..1.0)) * angle.cos();
         let y = (radius + spread * rng.gen_range(-1.0..1.0)) * angle.sin();
-        let z = spread * rng.gen_range(-1.0..1.0) * (1.0 - genome.ellipticity);
+        
+        // Distribución vertical gaussiana para el grosor del disco
+        // El bulbo central es más grueso (1.0 - distance_ratio)
+        let bulge = (1.0 - distance_ratio).powf(2.0) * 15.0;
+        let z_spread = (spread * 0.5 + bulge) * genome.thickness;
+        let z = z_spread * rng.gen_range(-1.0..1.0) * (1.0 - genome.ellipticity);
         
         positions.push(x);
         positions.push(y);
@@ -531,6 +540,7 @@ fn galaxy_crossover<R: Rng>(p1: &GalaxyGenome, p2: &GalaxyGenome, rng: &mut R) -
         color_temperature: if rng.gen() { p1.color_temperature } else { p2.color_temperature },
         rotation_speed: if rng.gen() { p1.rotation_speed } else { p2.rotation_speed },
         ellipticity: if rng.gen() { p1.ellipticity } else { p2.ellipticity },
+        thickness: if rng.gen() { p1.thickness } else { p2.thickness },
         seed: rng.gen(),
     }
 }
@@ -566,6 +576,10 @@ fn galaxy_mutate<R: Rng>(genome: &mut GalaxyGenome, rate: f64, rng: &mut R) {
     if rng.gen_bool(rate) {
         genome.ellipticity += rng.gen_range(-0.1..0.1);
         genome.ellipticity = genome.ellipticity.clamp(0.0, 1.0);
+    }
+    if rng.gen_bool(rate) {
+        genome.thickness += rng.gen_range(-0.05..0.05);
+        genome.thickness = genome.thickness.clamp(0.05, 0.5);
     }
     if rng.gen_bool(rate * 0.1) {
         genome.seed = rng.gen();

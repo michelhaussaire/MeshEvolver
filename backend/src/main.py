@@ -62,6 +62,7 @@ class GalaxyGenomeParams(BaseModel):
     color_temperature: float
     rotation_speed: float
     ellipticity: float
+    thickness: float = 0.2
     seed: int
 
 
@@ -128,6 +129,7 @@ def galaxy_genome_to_dict(g):
         "color_temperature": g.color_temperature,
         "rotation_speed": g.rotation_speed,
         "ellipticity": g.ellipticity,
+        "thickness": g.thickness,
         "seed": g.seed,
     }
 
@@ -283,6 +285,7 @@ async def evolve_galaxy(req: GalaxyEvolutionRequest):
             item.genome.ellipticity,
             item.genome.seed,
         )
+        g.thickness = item.genome.thickness
         rust_pop.append((g, item.fitness))
 
     new_rust_genomes = procedural_graph_core.evolve_galaxy_population(
@@ -308,6 +311,7 @@ async def generate_galaxy_points(params: GalaxyGenomeParams):
         params.ellipticity,
         params.seed,
     )
+    genome.thickness = params.thickness
 
     points = procedural_graph_core.generate_galaxy_points(genome)
 
