@@ -1,0 +1,77 @@
+{
+  "id": "venus",
+  "name": "Venus",
+  "type": "terrestrial_planet",
+  "category": "real",
+  "description": "Venus es el segundo planeta del Sistema Solar y elmás caliente, con temperaturas superficiales de hasta 465°C. Su atmósfera densa de CO2 crea un efecto invernadero extremo. Es llamado 'gemelo de la Tierra' por su tamaño similar, pero es un mundo infernal con presión atmosférica 93 veces la terrestre.",
+  "discovery": {
+    "year": null,
+    "discoverer": null,
+    "method": "naked_eye"
+  },
+  "physical_properties": {
+    "mass": 4.867e24,
+    "mass_unit": "kg",
+    "diameter": 12104,
+    "diameter_unit": "km",
+    "gravity": 8.87,
+    "mass_kg": 4.867e24,
+    "radius_km": 6052,
+    "temperature_k": 737,
+    "density_g_cm3": 5.24,
+    "gravity_m_s2": 8.87,
+    "orbital_period_days": 225,
+    "rotation_period_hours": -5832.5,
+    "axial_tilt_degrees": 177.4,
+    "moons_count": 0,
+    "surface_pressure_atm": 92
+  },
+  "visual_properties": {
+    "color": "yellow_white",
+    "atmosphere": true,
+    "clouds": true,
+    "water_coverage": 0.0,
+    "color_hex": "#E6E6B8",
+    "texture_type": "cloudy_venusian",
+    "brightness": 0.9,
+    "apparent_magnitude": -4.14
+  },
+  "comparison_params": {
+    "planet_genome": {
+      "radius": 0.95,
+      "water_coverage": 0.0,
+      "atmosphere_type": "dense_co2"
+    }
+  },
+  "atmosphere_composition": {
+    "CO2": 96.5,
+    "N2": 3.5
+  },
+  "notable_moons": [],
+  "rings": false,
+  "magnetic_field": false,
+  "fun_facts": [
+    "Venus rota hacia atrás comparado con la mayoría de planetas (rotación retrógrada)",
+    "Un día en Venus es más largo que su año (243 días terrestres vs 225 días)",
+    "La temperatura superficial puede derretir plomo (aproximadamente 465°C)",
+    "La presión atmosférica es 93 veces mayor que la de la Tierra",
+    "Venus es el objeto natural más brillante en el cielo nocturno después de la Luna",
+    "Más de 40 naves espaciales han explorado Venus desde 1962"
+  ],
+  "exploration_missions": [
+    "Mariner 2 (1962) - Primer sobrevuelo exitoso",
+    "Venera 7 (1970) - Primer aterrizaje exitoso en otro planeta",
+    "Magallanes (1990-1994) - Mapeó el 98% de la superficie de Venus con radar",
+    "Venus Express (2006-2014) - Orbitador de la ESA",
+    "Akatsuki (2015-presente) - Orbitador de JAXA estudiando la atmósfera"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/venus/",
+    "esa": "https://sci.esa.int/web/venus-express/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Venus"
+  },
+  "image_urls": {
+    "thumbnail": "https://images-assets.nasa.gov/image/PIA00159/PIA00159~small.jpg",
+    "high_res": "https://images-assets.nasa.gov/image/PIA00159/PIA00159~orig.jpg"
+  }
+}

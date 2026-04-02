@@ -1,0 +1,54 @@
+{
+  "id": "pinwheel",
+  "name": "Galaxia Pinwheel (M101)",
+  "type": "spiral_galaxy",
+  "category": "real",
+  "description": "La Galaxia Pinwheel (M101) es una espiral grand design a 21 millones de años luz en la constelación de la Osa Mayor. Es famosa por sus brazos espirales bien definidos y simétricos, conteniendo regiones de formación estelar masiva con tonos rosados y azules característicos.",
+  "discovery": {
+    "year": 1781,
+    "discoverer": "Pierre Méchain",
+    "method": "Telescope observation"
+  },
+  "physical_properties": {
+    "mass": 1.0e11,
+    "mass_unit": "solar_masses",
+    "diameter": 170000,
+    "diameter_unit": "light_years",
+    "star_count": "1 billón",
+    "distance_light_years": 21000000
+  },
+  "visual_properties": {
+    "color_temperature": 8000,
+    "barred_spiral": false,
+    "num_arms": 5,
+    "color_hex": "#FFB6C1",
+    "texture_type": "grand_design_spiral",
+    "brightness": 0.8,
+    "apparent_magnitude": 7.86
+  },
+  "comparison_params": {
+    "galaxy_genome": {
+      "num_arms": 5,
+      "arm_tightness": 0.35,
+      "core_density": 0.5,
+      "star_count": 150000
+    }
+  },
+  "fun_facts": [
+    "170,000 años luz de diámetro (70% más grande que la Vía Láctea)",
+    "Contiene aproximadamente 1 billón de estrellas",
+    "Cinco brazos espirales prominentes - más que las galaxias espirales típicas",
+    "Hogar de numerosas regiones H II de formación estelar gigantes",
+    "Forma asimétrica probablemente causada por interacciones con galaxias compañeras",
+    "Orientación de cara hace que la estructura espiral sea claramente visible"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/universe/galaxies/",
+    "esahubble": "https://esahubble.org/images/pota2301a/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Pinwheel_Galaxy"
+  },
+  "image_urls": {
+    "thumbnail": "https://esahubble.org/images/pota2301a/small.jpg",
+    "high_res": "https://esahubble.org/images/pota2301a/original.jpg"
+  }
+}

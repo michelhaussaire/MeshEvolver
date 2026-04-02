@@ -20,7 +20,12 @@
     "age_gyr": 4.6,
     "temperature_k": 210,
     "density_g_cm3": 3.93,
-    "gravity_m_s2": 3.72
+    "gravity_m_s2": 3.72,
+    "orbital_period_days": 687,
+    "rotation_period_hours": 24.6,
+    "axial_tilt_degrees": 25.19,
+    "moons_count": 2,
+    "surface_pressure_atm": 0.006
   },
   "visual_properties": {
     "color": "red_orange",
@@ -39,17 +44,36 @@
       "atmosphere_type": "thin"
     }
   },
+  "atmosphere_composition": {
+    "CO2": 95.32,
+    "N2": 2.7,
+    "Ar": 1.6
+  },
+  "notable_moons": ["Fobos", "Deimos"],
+  "rings": false,
+  "magnetic_field": false,
   "fun_facts": [
-    "Mars has the largest volcano in the solar system: Olympus Mons",
-    "Evidence suggests Mars once had liquid water on its surface",
+    "Marte tiene el volcán más grande del sistema solar: Olympus Mons",
+    "La evidencia sugiere que Marte tuvo agua líquida en su superficie en el pasado",
     "Un día marciano (sol) dura 24 horas y 37 minutos terrestres",
-    "Marte tiene los polos helados más grandes que Texas",
+    "Marte tiene casquetes polares de hielo más grandes que Texas",
     "El rover Perseverance está buscando signos de vida microbiana pasada",
     "Los humanos podrían pisar Marte en la década de 2030"
+  ],
+  "exploration_missions": [
+    "Curiosity (2012-presente) - Rover explorando el cráter Gale",
+    "Perseverance (2021-presente) - Buscando signos de vida pasada",
+    "Ingenuity - Primer helicóptero en otro planeta",
+    "InSight (2018-2022) - Estudio sísmico de Marte",
+    "Mars Reconnaissance Orbiter (2006-presente) - Mapeo orbital"
   ],
   "educational_links": {
     "nasa": "https://science.nasa.gov/mars/",
     "esa": "https://www.esa.int/Science_Exploration/Space_Science/Mars",
     "wikipedia": "https://en.wikipedia.org/wiki/Mars"
+  },
+  "image_urls": {
+    "thumbnail": "https://images-assets.nasa.gov/image/PIA22582/PIA22582~small.jpg",
+    "high_res": "https://images-assets.nasa.gov/image/PIA22582/PIA22582~orig.jpg"
   }
 }

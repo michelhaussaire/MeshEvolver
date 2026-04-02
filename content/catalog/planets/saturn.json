@@ -1,0 +1,82 @@
+{
+  "id": "saturn",
+  "name": "Saturno",
+  "type": "gas_giant",
+  "category": "real",
+  "description": "Saturno es el sexto planeta del Sol y el segundo más grande del Sistema Solar. Es famoso por su espectacular sistema de anillos, compuestos principalmente de hielo y roca. Tiene 146 lunas conocidas, incluyendo Titán, más grande que Mercurio.",
+  "discovery": {
+    "year": null,
+    "discoverer": null,
+    "method": "naked_eye"
+  },
+  "physical_properties": {
+    "mass": 5.683e26,
+    "mass_unit": "kg",
+    "diameter": 116460,
+    "diameter_unit": "km",
+    "gravity": 10.44,
+    "mass_kg": 5.683e26,
+    "radius_km": 58232,
+    "temperature_k": 134,
+    "density_g_cm3": 0.687,
+    "gravity_m_s2": 10.44,
+    "orbital_period_days": 10759,
+    "rotation_period_hours": 10.7,
+    "axial_tilt_degrees": 26.73,
+    "moons_count": 146,
+    "surface_pressure_atm": null
+  },
+  "visual_properties": {
+    "color": "pale_gold",
+    "atmosphere": true,
+    "clouds": true,
+    "water_coverage": 0.0,
+    "color_hex": "#F4D03F",
+    "texture_type": "banded_ringed_gas_giant",
+    "brightness": 0.85,
+    "apparent_magnitude": -0.55
+  },
+  "comparison_params": {
+    "planet_genome": {
+      "radius": 9.14,
+      "water_coverage": 0.0,
+      "atmosphere_type": "gas_giant"
+    }
+  },
+  "atmosphere_composition": {
+    "H2": 96.3,
+    "He": 3.25,
+    "CH4": 0.45
+  },
+  "rings_properties": {
+    "diameter_km": 274000,
+    "thickness_m": 10,
+    "main_rings": ["D", "C", "B", "A", "F", "G", "E"],
+    "composition": ["ice particles", "rock","dust"]
+  },
+  "notable_moons": ["Titán", "Encélado", "Mimas", "Japeto", "Dione", "Rea", "Tetis"],
+  "rings": true,
+  "magnetic_field": true,
+  "fun_facts": [
+    "La densidad de Saturno es menor que la del agua - flotaría en una bañera gigante",
+    "Existe un patrón hexagonal de tormenta en el polo norte de Saturno",
+    "Los vientos pueden alcanzar 500 metros por segundo (1,800 km/h)",
+    "Titán tiene una atmósfera densa y lagos de metano líquido",
+    "Encélado tiene géiseres que expulsan hielo de agua al espacio",
+    "La misión Cassini orbitó Saturno durante 13 años (2004-2017)"
+  ],
+  "exploration_missions": [
+    "Pioneer 11 (1979) - Primer sobrevuelo",
+    "Voyager 1 & 2 (1980-1981) - Imágenes detalladas de los anillos",
+    "Cassini-Huygens (2004-2017) - 13 años en órbita, aterrizaje en Titán"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/saturn/",
+    "esahubble": "https://esahubble.org/images/archive/category/saturn/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Saturn"
+  },
+  "image_urls": {
+    "thumbnail": "https://images-assets.nasa.gov/image/PIA21345/PIA21345~small.jpg",
+    "high_res": "https://images-assets.nasa.gov/image/PIA21345/PIA21345~orig.jpg"
+  }
+}

@@ -20,7 +20,12 @@
     "age_gyr": 4.5,
     "temperature_k": 165,
     "density_g_cm3": 1.33,
-    "gravity_m_s2": 24.79
+    "gravity_m_s2": 24.79,
+    "orbital_period_days": 4333,
+    "rotation_period_hours": 9.93,
+    "axial_tilt_degrees": 3.13,
+    "moons_count": 95,
+    "surface_pressure_atm": null
   },
   "visual_properties": {
     "color": "banded_orange_white",
@@ -39,17 +44,35 @@
       "atmosphere_type": "gas_giant"
     }
   },
+  "atmosphere_composition": {
+    "H2": 89.8,
+    "He": 10.2
+  },
+  "notable_moons": ["Europa", "Ganimedes", "Ío", "Calisto"],
+  "rings": true,
+  "magnetic_field": true,
   "fun_facts": [
-    "The Great Red Spot is a storm that has raged for at least 400 years",
-    "Jupiter has 95 known moons",
+    "La Gran Mancha Roja es una tormenta que ha durado al menos 400 años",
+    "Júpiter tiene 95 lunas conocidas",
     "Júpiter tiene un campo magnético 14 veces más fuerte que el de la Tierra",
     "El planeta emite más calor del que recibe del Sol",
     "Su núcleo puede ser de roca o una mezcla de elementos pesados",
     "Las bandas de nubes alcanzan velocidades de 360 km/h"
   ],
+  "exploration_missions": [
+    "Pioneer 10 & 11 (1973-1974) - Primeras naves en visitar Júpiter",
+    "Voyager 1 & 2 (1979) - Descubrieron anillos y lunas",
+    "Galileo (1995-2003) - Primer orbitador, sonda en atmósfera",
+    "Juno (2016-presente) - Estudiando el interior y campo magnético",
+    "Juice ESA (llegada 2031) - Estudiará las lunas galileanas"
+  ],
   "educational_links": {
     "nasa": "https://science.nasa.gov/jupiter/",
     "esa": "https://www.esa.int/Science_Exploration/Space_Science/Jupiter",
     "wikipedia": "https://en.wikipedia.org/wiki/Jupiter"
+  },
+  "image_urls": {
+    "thumbnail": "https://images-assets.nasa.gov/image/PIA00343/PIA00343~small.jpg",
+    "high_res": "https://images-assets.nasa.gov/image/PIA00343/PIA00343~orig.jpg"
   }
 }

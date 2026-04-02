@@ -1,0 +1,74 @@
+{
+  "id": "uranus",
+  "name": "Urano",
+  "type": "ice_giant",
+  "category": "real",
+  "description": "Urano es el séptimo planeta del Sol y el tercero más grande del Sistema Solar. Su característica más distintiva es su inclinación axial extrema de 97.77°, haciendo que 'ruede' sobre su lado. Tiene 27 lunas nombradas en honor a personajes de Shakespeare y Alexander Pope.",
+  "discovery": {
+    "year": 1781,
+    "discoverer": "William Herschel",
+    "method": "Telescope observation"
+  },
+  "physical_properties": {
+    "mass": 8.681e25,
+    "mass_unit": "kg",
+    "diameter": 50724,
+    "diameter_unit": "km",
+    "gravity": 8.69,
+    "mass_kg": 8.681e25,
+    "radius_km": 25362,
+    "temperature_k": 76,
+    "density_g_cm3": 1.271,
+    "gravity_m_s2": 8.69,
+    "orbital_period_days": 30687,
+    "rotation_period_hours": -17.2,
+    "axial_tilt_degrees": 97.77,
+    "moons_count": 28,
+    "surface_pressure_atm": null
+  },
+  "visual_properties": {
+    "color": "pale_blue_green",
+    "atmosphere": true,
+    "clouds": true,
+    "water_coverage": 0.0,
+    "color_hex": "#B5E3E3",
+    "texture_type": "ice_giant_cyan",
+    "brightness": 0.65,
+    "apparent_magnitude": 5.68
+  },
+  "comparison_params": {
+    "planet_genome": {
+      "radius": 4.0,
+      "water_coverage": 0.0,
+      "atmosphere_type": "ice_giant"
+    }
+  },
+  "atmosphere_composition": {
+    "H2": 82.5,
+    "He": 15.2,
+    "CH4": 2.3
+  },
+  "notable_moons": ["Titania", "Oberón", "Umbriel", "Ariel", "Miranda", "Puck"],
+  "rings": true,
+  "magnetic_field": true,
+  "fun_facts": [
+    "Urano rota de lado con una inclinación axial de 97.77 grados",
+    "Sus lunas llevan nombres de personajes de Shakespeare y Alexander Pope",
+    "Cada estación dura más de 40 años debido a la inclinación extrema",
+    "Urano tiene 13 anillos conocidos",
+    "Su campo magnético está inclinado 60 grados respecto a su eje de rotación",
+    "Voyager 2 es la única nave que lo ha visitado (1986)",
+    "Tiene la atmósfera planetaria más fría del sistema solar (-224°C)"
+  ],
+  "exploration_missions": [
+    "Voyager 2 (1986) - Única nave en visitarlo"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/uranus/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Uranus"
+  },
+  "image_urls": {
+    "thumbnail": "https://images-assets.nasa.gov/image/PIA18182/PIA18182~small.jpg",
+    "high_res": "https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg"
+  }
+}

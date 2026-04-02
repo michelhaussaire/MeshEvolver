@@ -20,7 +20,12 @@
     "age_gyr": 4.54,
     "temperature_k": 288,
     "density_g_cm3": 5.51,
-    "gravity_m_s2": 9.81
+    "gravity_m_s2": 9.81,
+    "orbital_period_days": 365.25,
+    "rotation_period_hours": 23.93,
+    "axial_tilt_degrees": 23.44,
+    "moons_count": 1,
+    "surface_pressure_atm": 1.0
   },
   "visual_properties": {
     "color": "blue_green",
@@ -39,17 +44,36 @@
       "atmosphere_type": "moderate"
     }
   },
+  "atmosphere_composition": {
+    "N2": 78.0,
+    "O2": 21.0,
+    "Ar": 0.93,
+    "CO2": 0.04
+  },
+  "notable_moons": ["Luna"],
+  "rings": false,
+  "magnetic_field": true,
   "fun_facts": [
-    "Earth is the only known planet to support life",
-    "It has a powerful magnetic field protecting it from solar radiation",
+    "La Tierra es el único planeta conocido que alberga vida",
+    "Tiene un campo magnético poderoso que la protege de la radiación solar",
     "La Tierra no es una esfera perfecta: es un geoide achatado en los polos",
     "El 71% de la superficie terrestre está cubierta por agua",
     "La atmósfera protege la superficie de aproximadamente 100 toneladas de meteoroides diarios",
     "El núcleo interno de hierro-níquel tiene una temperatura similar a la superficie del Sol"
   ],
+  "exploration_missions": [
+    "Apollo (1969-1972) - Únicas misiones tripuladas a otro cuerpo celeste",
+    "ISS (1998-presente) - Estación Espacial Internacional",
+    "Landsat (1972-presente) - Monitoreo de superficie terrestre",
+    "Terra/Aqua (1999/2002-presente) - Observación del sistema Tierra"
+  ],
   "educational_links": {
     "nasa": "https://science.nasa.gov/earth/",
     "esa": "https://www.esa.int/Science_Exploration/Space_Science/Earth",
     "wikipedia": "https://en.wikipedia.org/wiki/Earth"
+  },
+  "image_urls": {
+    "thumbnail": "https://images-assets.nasa.gov/image/PIA00114/PIA00114~small.jpg",
+    "high_res": "https://images-assets.nasa.gov/image/PIA00114/PIA00114~orig.jpg"
   }
 }

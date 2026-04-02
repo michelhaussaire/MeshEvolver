@@ -20,7 +20,10 @@
     "age_gyr": 4.5,
     "temperature_k": 102,
     "density_g_cm3": 3.01,
-    "gravity_m_s2": 1.31
+    "gravity_m_s2": 1.31,
+    "orbital_period_days": 3.55,
+    "rotation_period_hours": 85.2,
+    "surface_pressure_atm": 0
   },
   "visual_properties": {
     "color": "icy_white",
@@ -39,16 +42,32 @@
       "atmosphere_type": "thin"
     }
   },
+  "atmosphere_composition": {
+    "O2": 100
+  },
+  "notable_moons": [],
+  "rings": false,
+  "magnetic_field": false,
   "fun_facts": [
-    "Europa likely has a subsurface ocean with more water than Earth",
-    "It is one of the most promising places to search for extraterrestrial life",
-    "La superficie tiene pocas cráteres, indicando actividad geológica reciente",
+    "Europa probablemente tiene un océano subsuperficial con más agua que la Tierra",
+    "Es uno de los lugares más prometedores para buscar vida extraterrestre",
+    "La superficie tiene pocos cráteres, indicando actividad geológica reciente",
     "Las líneas oscuras pueden ser crestas de hielo o fisuras",
     "La misión Europa Clipper de la NASA explorará este mundo en los 2030s"
+  ],
+  "exploration_missions": [
+    "Galileo (1995-2003) - Orbitador de Júpiter, datos detallados de Europa",
+    "Juno (2016-presente) - Sobrevuelos de estudio",
+    "Juice ESA (llegada 2031) - Estudiará las lunas de Júpiter",
+    "Europa Clipper (llegada 2030) - Misión dedicada a Europa"
   ],
   "educational_links": {
     "nasa": "https://science.nasa.gov/europa/",
     "esa": "https://www.esa.int/Science_Exploration/Space_Science/Juice",
     "wikipedia": "https://en.wikipedia.org/wiki/Europa_(moon)"
+  },
+  "image_urls": {
+    "thumbnail": "https://images-assets.nasa.gov/image/PIA19048/PIA19048~small.jpg",
+    "high_res": "https://images-assets.nasa.gov/image/PIA19048/PIA19048~orig.jpg"
   }
 }

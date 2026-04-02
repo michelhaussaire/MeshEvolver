@@ -1,0 +1,54 @@
+{
+  "id": "centaurus_a",
+  "name": "Centaurus A",
+  "type": "lenticular_galaxy",
+  "category": "real",
+  "description": "Centaurus A (NGC 5128) es la galaxia activa más cercana a la Tierra, situada a 11 millones de años luz. Es famosa por su distintiva banda de polvo oscura que la atraviesa y su núcleo activo alimentado por un agujero negro supermasivo. Es una de las galaxias más estudiadas del cielo austral.",
+  "discovery": {
+    "year": 1826,
+    "discoverer": "James Dunlop",
+    "method": "Telescope observation"
+  },
+  "physical_properties": {
+    "mass": 1.0e12,
+    "mass_unit": "solar_masses",
+    "diameter": 100000,
+    "diameter_unit": "light_years",
+    "star_count": "200 mil millones",
+    "distance_light_years": 11000000
+  },
+  "visual_properties": {
+    "color_temperature": 4500,
+    "barred_spiral": false,
+    "num_arms": 0,
+    "color_hex": "#D4A574",
+    "texture_type": "peculiar_spherical",
+    "brightness": 0.75,
+    "apparent_magnitude": 6.84
+  },
+  "comparison_params": {
+    "galaxy_genome": {
+      "num_arms": 0,
+      "arm_tightness": 0,
+      "core_density": 0.95,
+      "star_count": 120000
+    }
+  },
+  "fun_facts": [
+    "Galaxia activa más cercana a la Tierra (11 millones de años luz)",
+    "Contiene un agujero negro supermasivo de 55 millones de masas solares",
+    "Los jets se extienden 1 millón de años luz desde el centro",
+    "Una de las fuentes de radio más brillantes del cielo (llamada Centaurus A)",
+    "Resultado de la colisión entre una galaxia espiral y una elíptica",
+    "Tiene más de 100 cúmulos globulares confirmados"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/universe/galaxies/",
+    "esahubble": "https://esahubble.org/images/opo9814a/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Centaurus_A"
+  },
+  "image_urls": {
+    "thumbnail": "https://esahubble.org/images/opo9814a/small.jpg",
+    "high_res": "https://esahubble.org/images/opo9814a/original.jpg"
+  }
+}

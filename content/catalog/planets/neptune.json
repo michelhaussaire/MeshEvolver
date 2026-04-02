@@ -1,0 +1,74 @@
+{
+  "id": "neptune",
+  "name": "Neptuno",
+  "type": "ice_giant",
+  "category": "real",
+  "description": "Neptuno es el octavo y más distante planeta del Sistema Solar. Es el primer planeta descubierto mediante predicciones matemáticas (1846). Posee los vientos más fuertes del Sistema Solar, alcanzando 2,000 km/h. Su color azul intenso proviene del metano atmosférico.",
+  "discovery": {
+    "year": 1846,
+    "discoverer": "Johann Gottfried Galle (predicho por Urbain Le Verrier)",
+    "method": "Mathematical prediction"
+  },
+  "physical_properties": {
+    "mass": 1.024e26,
+    "mass_unit": "kg",
+    "diameter": 49528,
+    "diameter_unit": "km",
+    "gravity": 11.15,
+    "mass_kg": 1.024e26,
+    "radius_km": 24622,
+    "temperature_k": 72,
+    "density_g_cm3": 1.638,
+    "gravity_m_s2": 11.15,
+    "orbital_period_days": 60190,
+    "rotation_period_hours": 16.1,
+    "axial_tilt_degrees": 28.3,
+    "moons_count": 16,
+    "surface_pressure_atm": null
+  },
+  "visual_properties": {
+    "color": "deep_blue",
+    "atmosphere": true,
+    "clouds": true,
+    "water_coverage": 0.0,
+    "color_hex": "#5B5DDF",
+    "texture_type": "ice_giant_blue",
+    "brightness": 0.7,
+    "apparent_magnitude": 7.78
+  },
+  "comparison_params": {
+    "planet_genome": {
+      "radius": 3.86,
+      "water_coverage": 0.0,
+      "atmosphere_type": "ice_giant"
+    }
+  },
+  "atmosphere_composition": {
+    "H2": 80,
+    "He": 19,
+    "CH4": 1.5
+  },
+  "notable_moons": ["Tritón", "Proteo", "Nereida"],
+  "rings": true,
+  "magnetic_field": true,
+  "fun_facts": [
+    "Neptuno tiene los vientos más fuertes del sistema solar (2,100 km/h)",
+    "Fue el primer planeta descubierto mediante predicción matemática",
+    "Tritón orbita en dirección retrógrada - probablemente un objeto capturado",
+    "La Gran Mancha Oscura fue observada en 1989 pero desapareció en 1994",
+    "Un año de Neptuno equivale a 165 años terrestres",
+    "Tritón tiene géiseres de gas nitrógeno",
+    "Neptuno tiene 5 anillos principales y 4 arcos de anillos"
+  ],
+  "exploration_missions": [
+    "Voyager 2 (1989) - Única nave en visitarlo, descubrió anillos y lunas"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/neptune/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Neptune"
+  },
+  "image_urls": {
+    "thumbnail": "https://images-assets.nasa.gov/image/PIA01492/PIA01492~small.jpg",
+    "high_res": "https://images-assets.nasa.gov/image/PIA01492/PIA01492~orig.jpg"
+  }
+}

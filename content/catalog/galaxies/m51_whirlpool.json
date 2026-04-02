@@ -1,6 +1,6 @@
 {
   "id": "m51_whirlpool",
-  "name": "Whirlpool Galaxy",
+  "name": "Galaxia del Remolino (M51)",
   "type": "spiral_galaxy",
   "category": "real",
   "description": "La Galaxia del Remolino (M51) es una galaxia espiral clásica ubicada en la constelación de Canes Venatici. Es famosa por su estructura espiral bien definida y su interacción con la galaxia enana NGC 5195.",
@@ -14,7 +14,8 @@
     "mass_unit": "solar_masses",
     "diameter": 60000,
     "diameter_unit": "light_years",
-    "star_count": "100 billion"
+    "star_count": "100 mil millones",
+    "distance_light_years": 23000000
   },
   "visual_properties": {
     "color_temperature": 5500,
@@ -34,8 +35,8 @@
     }
   },
   "fun_facts": [
-    "M51 is interacting with NGC 5195, a dwarf galaxy",
-    "It is one of the first galaxies where spiral structure was observed",
+    "M51 interactúa con NGC 5195, una galaxia enana compañera",
+    "Es una de las primeras galaxias donde se observó estructura espiral",
     "La estructura espiral fue descubierta por Lord Rosse en 1845",
     "Está a unos 23 millones de años luz de distancia"
   ],
@@ -43,5 +44,9 @@
     "nasa": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-51/",
     "esahubble": "https://esahubble.org/images/m51/",
     "wikipedia": "https://en.wikipedia.org/wiki/Whirlpool_Galaxy"
+  },
+  "image_urls": {
+    "thumbnail": "https://esahubble.org/images/heic0506a/small.jpg",
+    "high_res": "https://esahubble.org/images/heic0506a/original.jpg"
   }
 }

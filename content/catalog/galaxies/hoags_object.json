@@ -1,0 +1,54 @@
+{
+  "id": "hoags_object",
+  "name": "Hoag's Object",
+  "type": "ring_galaxy",
+  "category": "real",
+  "description": "Hoag's Object es una misteriosa galaxia anular a 600 millones de años luz. Consiste en un núcleo amarillo rodeado por un anillo perfecto de estrellas azules jóvenes y regiones de formación estelar. Su origen sigue siendo un enigma astronómico.",
+  "discovery": {
+    "year": 1950,
+    "discoverer": "Arthur Hoag",
+    "method": "Photographic survey"
+  },
+  "physical_properties": {
+    "mass": 1.0e11,
+    "mass_unit": "solar_masses (estimado)",
+    "diameter": 120000,
+    "diameter_unit": "light_years",
+    "star_count": "Varios miles de millones",
+    "distance_light_years": 600000000
+  },
+  "visual_properties": {
+    "color_temperature": 10000,
+    "barred_spiral": false,
+    "num_arms": 0,
+    "color_hex": "#87CEEB",
+    "texture_type": "perfect_ring",
+    "brightness": 0.6,
+    "apparent_magnitude": 16
+  },
+  "comparison_params": {
+    "galaxy_genome": {
+      "num_arms": 0,
+      "arm_tightness": 0,
+      "core_density": 0.8,
+      "star_count": 40000
+    }
+  },
+  "fun_facts": [
+    "Una de las galaxias anulares más perfectas conocidas",
+    "Origen misterioso - posiblemente una colisión de galaxias o inestabilidad de barra",
+    "Contiene otra galaxia anular visible a través del espacio vacío (detrás de ella)",
+    "El núcleo amarillo contiene estrellas más antiguas, el anillo azul contiene estrellas más jóvenes",
+    "El espacio entre el núcleo y el anillo está mayormente vacío",
+    "Arthur Hoag la identificó primero como una nebulosa planetaria antes de darse cuenta de que es una galaxia"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/universe/galaxies/",
+    "esahubble": "https://esahubble.org/images/pota0115a/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Hoag%27s_Object"
+  },
+  "image_urls": {
+    "thumbnail": "https://esahubble.org/images/pota0115a/small.jpg",
+    "high_res": "https://esahubble.org/images/pota0115a/original.jpg"
+  }
+}

@@ -248,23 +248,113 @@ const RealCatalogBrowser: React.FC<RealCatalogBrowserProps> = ({ onClose, onSele
                 </span>
                 <h3 className="text-2xl font-bold text-white mt-1">{selectedItem.name}</h3>
                 <p className="text-xs text-slate-500 mt-2 leading-relaxed">{selectedItem.description}</p>
+                
+                {/* Thumbnail */}
+                {selectedItem.image_urls?.thumbnail && (
+                  <div className="mt-3 rounded-lg overflow-hidden border border-slate-800">
+                    <img 
+                      src={selectedItem.image_urls.thumbnail} 
+                      alt={selectedItem.name}
+                      className="w-full h-32 object-cover"
+                      loading="lazy"
+                    />
+                    <div className="text-[8px] text-slate-600 text-center py-1 bg-slate-900">
+                      Imagen: NASA/ESA
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="flex-1 overflow-y-auto p-6 space-y-6">
+                {/* Extended Properties */}
+                {!isGalaxy && (
+                  <>
+                    {/* Atmospheric/Badges */}
+                    {(selectedItem as PlanetCatalogItem).atmosphere || 
+                     (selectedItem as PlanetCatalogItem).rings || 
+                     (selectedItem as PlanetCatalogItem).magnetic_field ? (
+                      <div>
+                        <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-2">
+                          Características
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {(selectedItem as PlanetCatalogItem).atmosphere && (
+                            <span className="px-2 py-1 rounded-lg text-[10px] bg-blue-500/20 text-blue-400">Atmósfera</span>
+                          )}
+                          {(selectedItem as PlanetCatalogItem).rings && (
+                            <span className="px-2 py-1 rounded-lg text-[10px] bg-amber-500/20 text-amber-400">Anillos</span>
+                          )}
+                          {(selectedItem as PlanetCatalogItem).magnetic_field && (
+                            <span className="px-2 py-1 rounded-lg text-[10px] bg-purple-500/20 text-purple-400">Campo Magnético</span>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Notable Moons */}
+                    {(selectedItem as PlanetCatalogItem).notable_moons && (selectedItem as PlanetCatalogItem).notable_moons!.length > 0 && (
+                      <div>
+                        <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Lunas Notables</h4>
+                        <div className="flex flex-wrap gap-1">
+                          {(selectedItem as PlanetCatalogItem).notable_moons?.map((moon, i) => (
+                            <span key={i} className="px-2 py-0.5 rounded bg-slate-800 text-[10px] text-slate-400">
+                              {moon}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Atmosphere Composition */}
+                    {(selectedItem as PlanetCatalogItem).atmosphere_composition && (
+                      <div>
+                        <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Composición Atmosférica</h4>
+                        <div className="space-y-1">
+                          {Object.entries((selectedItem as PlanetCatalogItem).atmosphere_composition || {}).map(([key, value]) => (
+                            <div key={key} className="flex justify-between text-[11px]">
+                              <span className="text-slate-500">{key}</span>
+                              <span className="text-slate-300 font-mono">
+                                {typeof value === 'number' ? `${value}%` : Array.isArray(value) ? value.join(', ') : value}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </>
+                )}
+
                 {/* Physical Properties */}
                 <div>
                   <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 flex items-center gap-2">
                     <Info size={12} /> Propiedades Físicas
                   </h4>
                   <div className="space-y-2">
-                    {Object.entries(selectedItem.physical_properties).map(([key, value]) => (
-                      <div key={key} className="flex justify-between text-sm">
-                        <span className="text-slate-500 capitalize">{key.replace(/_/g, ' ')}</span>
-                        <span className="text-slate-300 font-mono">
-                          {typeof value === 'number' ? value.toExponential(2) : value}
-                        </span>
-                      </div>
-                    ))}
+                    {Object.entries(selectedItem.physical_properties).map(([key, value]) => {
+                      // Skip undefined/null values
+                      if (value === undefined || value === null) return null;
+                      
+                      // Format the value
+                      let formattedValue: string;
+                      if (typeof value === 'number') {
+                        if (value > 1e10) {
+                          formattedValue = value.toExponential(2);
+                        } else if (key.includes('_period_')) {
+                          formattedValue = value.toLocaleString();
+                        } else {
+                          formattedValue = value.toLocaleString();
+                        }
+                      } else {
+                        formattedValue = String(value);
+                      }
+                      
+                      return (
+                        <div key={key} className="flex justify-between text-sm">
+                          <span className="text-slate-500 capitalize">{key.replace(/_/g, ' ')}</span>
+                          <span className="text-slate-300 font-mono">{formattedValue}</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -279,6 +369,22 @@ const RealCatalogBrowser: React.FC<RealCatalogBrowserProps> = ({ onClose, onSele
                         <li key={i} className="text-xs text-slate-400 leading-relaxed flex gap-2">
                           <span className={`text-${accentColor}-400 mt-0.5`}>•</span>
                           {fact}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Exploration Missions */}
+                {'exploration_missions' in selectedItem && selectedItem.exploration_missions && selectedItem.exploration_missions.length > 0 && (
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 flex items-center gap-2">
+                      Misiones de Exploración
+                    </h4>
+                    <ul className="space-y-1">
+                      {selectedItem.exploration_missions.map((mission, i) => (
+                        <li key={i} className="text-[11px] text-slate-400">
+                          • {mission}
                         </li>
                       ))}
                     </ul>

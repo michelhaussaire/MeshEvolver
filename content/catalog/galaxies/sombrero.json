@@ -1,0 +1,54 @@
+{
+  "id": "sombrero",
+  "name": "Galaxia Sombrero (M104)",
+  "type": "spiral_galaxy",
+  "category": "real",
+  "description": "La Galaxia Sombrero (M104) es una galaxia espiral famosa por su distintiva apariencia de 'sombrero' con un brillante núcleo y un anillo de polvo ecuatorial. Se encuentra a 28 millones de años luz en la constelación de Virgo. Su núcleo alberga un agujero negro supermasivo.",
+  "discovery": {
+    "year": 1781,
+    "discoverer": "Pierre Méchain",
+    "method": "Telescope observation"
+  },
+  "physical_properties": {
+    "mass": 8.0e11,
+    "mass_unit": "solar_masses",
+    "diameter": 50000,
+    "diameter_unit": "light_years",
+    "star_count": "100 mil millones",
+    "distance_light_years": 28000000
+  },
+  "visual_properties": {
+    "color_temperature": 6500,
+    "barred_spiral": false,
+    "num_arms": 0,
+    "color_hex": "#F5DEB3",
+    "texture_type": "edge_on_spiral",
+    "brightness": 0.85,
+    "apparent_magnitude": 8.0
+  },
+  "comparison_params": {
+    "galaxy_genome": {
+      "num_arms": 0,
+      "arm_tightness": 0.5,
+      "core_density": 0.9,
+      "star_count": 80000
+    }
+  },
+  "fun_facts": [
+    "Contiene un agujero negro supermasivo de aproximadamente 1 mil millones de masas solares",
+    "Nombrada por su parecido a un sombrero mexicano",
+    "Tiene aproximadamente 2000 cúmulos globulares (10x más que la Vía Láctea)",
+    "Una de las galaxias más fotogénicas del universo",
+    "La vista de canto hace que el anillo de polvo y el núcleo brillante sean muy prominentes",
+    "Descubierta por Pierre Méchain pero añadida al catálogo Messier póstumamente"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/universe/galaxies/",
+    "esahubble": "https://esahubble.org/images/opo0328a/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Sombrero_Galaxy"
+  },
+  "image_urls": {
+    "thumbnail": "https://esahubble.org/images/opo0328a/small.jpg",
+    "high_res": "https://esahubble.org/images/opo0328a/original.jpg"
+  }
+}

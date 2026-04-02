@@ -1,0 +1,74 @@
+{
+  "id": "mercury",
+  "name": "Mercurio",
+  "type": "terrestrial_planet",
+  "category": "real",
+  "description": "Mercurio es el planeta más pequeño y más cercano al Sol del Sistema Solar. Temperaturas extremas van desde -180°C por la noche hasta 430°C durante el día. No tiene atmósfera significativa y su superficie está cubierta de cráteres, similar a la Luna.",
+  "discovery": {
+    "year": null,
+    "discoverer": null,
+    "method": "naked_eye"
+  },
+  "physical_properties": {
+    "mass": 3.285e23,
+    "mass_unit": "kg",
+    "diameter": 4880,
+    "diameter_unit": "km",
+    "gravity": 3.7,
+    "mass_kg": 3.285e23,
+    "radius_km": 2440,
+    "temperature_k": 440,
+    "density_g_cm3": 5.43,
+    "gravity_m_s2": 3.7,
+    "orbital_period_days": 88,
+    "rotation_period_hours": 1407.6,
+    "axial_tilt_degrees": 0.034,
+    "moons_count": 0,
+    "surface_pressure_atm": 0.0000000001
+  },
+  "visual_properties": {
+    "color": "grey_brown",
+    "atmosphere": false,
+    "clouds": false,
+    "water_coverage": 0.0,
+    "color_hex": "#8C8680",
+    "texture_type": "cratered_mercurian",
+    "brightness": 0.5,
+    "apparent_magnitude": -0.42
+  },
+  "comparison_params": {
+    "planet_genome": {
+      "radius": 0.38,
+      "water_coverage": 0.0,
+      "atmosphere_type": "none"
+    }
+  },
+  "atmosphere_composition": {
+    "exosphere_only": ["oxígeno", "sodio", "hidrógeno", "helio", "potasio"]
+  },
+  "notable_moons": [],
+  "rings": false,
+  "magnetic_field": true,
+  "fun_facts": [
+    "Mercurio es el planeta más pequeño del sistema solar",
+    "A pesar de ser el más cercano al Sol, Venus es más caliente debido a su atmósfera",
+    "Un día de Mercurio equivale a 176 días terrestres",
+    "Mercurio tiene hielo en cráteres permanentemente sombreados en sus polos",
+    "La Cuenca Caloris es uno de los cráteres de impacto más grandes (1,550 km de diámetro)",
+    "Mercurio tiene la órbita más excéntrica de todos los planetas",
+    "Mercurio se está encogiendo - perdió 7 km de radio a lo largo de su historia"
+  ],
+  "exploration_missions": [
+    "Mariner 10 (1974-1975) - Primer sobrevuelo, mapeó el 45% de la superficie",
+    "MESSENGER (2011-2015) - Primer orbitador, mapeó toda la superficie",
+    "BepiColombo (ESA/JAXA, lanzado 2018) - Llegada estimada 2025"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/mercury/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mercury"
+  },
+  "image_urls": {
+    "thumbnail": "https://images-assets.nasa.gov/image/PIA15160/PIA15160~small.jpg",
+    "high_res": "https://images-assets.nasa.gov/image/PIA15160/PIA15160~orig.jpg"
+  }
+}

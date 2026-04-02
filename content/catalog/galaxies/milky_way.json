@@ -14,7 +14,8 @@
     "mass_unit": "solar_masses",
     "diameter": 105700,
     "diameter_unit": "light_years",
-    "star_count": "100-400 mil millones"
+    "star_count": "100-400 mil millones",
+    "distance_light_years": 0
   },
   "visual_properties": {
     "color_temperature": 5778,
@@ -43,5 +44,9 @@
     "nasa": "https://science.nasa.gov/milky-way/",
     "esahubble": "https://esahubble.org/science/galaxies/",
     "wikipedia": "https://en.wikipedia.org/wiki/Milky_Way"
+  },
+  "image_urls": {
+    "thumbnail": "https://images-assets.nasa.gov/image/PIA13142/PIA13142~small.jpg",
+    "high_res": "https://images-assets.nasa.gov/image/PIA13142/PIA13142~orig.jpg"
   }
 }

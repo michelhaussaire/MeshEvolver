@@ -14,7 +14,8 @@
     "mass_unit": "solar_masses",
     "diameter": 220000,
     "diameter_unit": "light_years",
-    "star_count": "1 trillion"
+    "star_count": "1 trillion",
+    "distance_light_years": 2500000
   },
   "visual_properties": {
     "color_temperature": 6500,
@@ -32,6 +33,24 @@
       "core_density": 0.7,
       "star_count": 500000
     }
+  },
+  "fun_facts": [
+    "Andrómeda se acerca a la Vía Láctea a 110 km/s",
+    "Contiene un agujero negro supermasivo de 100-230 millones de masas solares",
+    "Andrómeda colisionará con la Vía Láctea en 4.5 mil millones de años",
+    "Tiene al menos 20 satélites galácticos en órbita",
+    "Fue la primera galaxia en ser reconocida como un 'universo-isla' separado de la Vía Láctea"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/andromeda/",
+    "esahubble": "https://esahubble.org/images/andromeda/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Andromeda_Galaxy"
+  },
+  "image_urls": {
+    "thumbnail": "https://esahubble.org/images/heic1502a/small.jpg",
+    "high_res": "https://esahubble.org/images/heic1502a/original.jpg"
+  }
+}
   },
   "fun_facts": [
     "Andromeda is approaching the Milky Way at 110 km/s",
