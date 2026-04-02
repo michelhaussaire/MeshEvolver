@@ -1,1 +1,71 @@
+<<<<<<< HEAD
 {}
+=======
+{
+  "id": "atmosphere_composition",
+  "category": "atmosphere",
+  "title": {
+    "scientific": "Atmospheric Composition",
+    "algorithmic": "Rayleigh Scattering Simulation"
+  },
+  "scientific": {
+    "concept": "Earth's atmosphere is composed mainly of nitrogen (78%), oxygen (21%), and argon (0.93%). The blue color of the sky results from Rayleigh scattering, where gas molecules scatter more blue light than red.",
+    "analogy": "Atmospheric scattering is like millions of tiny mirrors in the air: they reflect more blue light (short wavelength) in all directions, while red light (long wavelength) passes straight through.",
+    "real_world_example": "During sunrise/sunset, light travels through more atmosphere, scattering so much blue that only reddish light arrives. On Mars, the dusty atmosphere produces red daytime skies and blue sunrises.",
+    "physics_formula": "I(λ) = I₀(λ) × exp(-β(λ) × s)",
+    "references": [
+      "Bohren, C.F. & Huffman, D.R. (1983). Absorption and Scattering of Light by Small Particles",
+      "Pierrehumbert, R.T. (2010). Principles of Planetary Climate"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Rayleigh Scattering Shader",
+    "complexity": {
+      "time": "O(pixels × samples)",
+      "space": "O(1)"
+    },
+    "why_this_algorithm": "The Rayleigh scattering model provides physically correct results for planetary atmospheres. It is numerically integrated along the view ray to calculate transmittance and scattered radiance.",
+    "comparison": [
+      {
+        "algorithm": "rayleigh",
+        "advantage": "Physically correct for clean atmospheres",
+        "disadvantage": "Computationally expensive for real-time",
+        "best_for": "Realistic atmosphere simulations"
+      },
+      {
+        "algorithm": "gradient",
+        "advantage": "Very fast, trivial to implement",
+        "disadvantage": "Doesn't respond to sun position or altitude",
+        "best_for": "Simple games or static views"
+      }
+    ],
+    "pseudocode": "function rayleighScattering(rayOrigin, rayDir, sunDir):\n    t = intersectAtmosphere(rayOrigin, rayDir)\n    dt = t / samples\n    \n    totalRayleigh = 0\n    for i in 0..samples:\n        samplePos = rayOrigin + rayDir × (i × dt)\n        height = length(samplePos) - planetRadius\n        density = exp(-height / scaleHeight)\n        \n        opticalDepth += density × dt\n        sunRay = sunDir × intersectAtmosphere(samplePos, sunDir)\n        sunOptical = getOpticalDepth(samplePos, sunRay)\n        \n        scattering = phaseFunction × density × exp(-(opticalDepth + sunOptical))\n        totalRayleigh += scattering × dt\n    \n    return totalRayleigh",
+    "parameters": [
+      {
+        "name": "rayleigh_coefficient",
+        "description": "Rayleigh scattering coefficient",
+        "range": "0.001 - 0.1",
+        "default": 0.0058
+      },
+      {
+        "name": "mie_coefficient",
+        "description": "Mie scattering coefficient (particles)",
+        "range": "0.0001 - 0.01",
+        "default": 0.0021
+      },
+      {
+        "name": "scale_height_rayleigh",
+        "description": "Scale height for Rayleigh scattering",
+        "range": "1000 - 15000",
+        "default": 8500
+      },
+      {
+        "name": "samples",
+        "description": "Number of samples for integration",
+        "range": "4 - 32",
+        "default": 16
+      }
+    ]
+  }
+}
+>>>>>>> feature/CL-002-educational-content-api

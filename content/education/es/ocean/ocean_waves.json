@@ -6,15 +6,27 @@
     "algorithmic": "Generación de Olas Procedurales"
   },
   "scientific": {
+<<<<<<< HEAD
     "concept": "Las olas oceánicas resultan de la superposición de viento local, corrientes regionales y fuerzas de marea.",
     "analogy": "Imagina lanzar piedras en un estanque.",
     "real_world_example": "El Océano Pacífico muestra olas de ~15m durante tormentas.",
     "physics_formula": "H = (U² × F) / g × tanh(2πd/L)",
     "references": []
+=======
+    "concept": "Las olas oceánicas resultan de la superposición de ondas generadas por el viento sobre la superficie del agua. La altura, período y dirección de las olas dependen de la velocidad del viento, la duración del evento y la distancia de fetch (zona de generación).",
+    "analogy": "Imagina lanzar piedras en un estanque: cada piedra genera ondas circulares que se superponen con las de otras piedras. En el océano, millones de 'piedras' (ráfagas de viento) crean un patrón complejo de interferencia.",
+    "real_world_example": "El Océano Pacífico muestra olas de ~15m de altura significativa durante tormentas, con períodos de 12-15 segundos. El oleaje se propaga miles de kilómetros como swell hasta costas distantes.",
+    "physics_formula": "H = (U² × F) / g × tanh(2πd/L)",
+    "references": [
+      "Kinsman, B. (1965). Wind Waves: Their Generation and Propagation on the Ocean Surface",
+      "Holthuijsen, L.H. (2007). Waves in Oceanic and Coastal Waters"
+    ]
+>>>>>>> feature/CL-002-educational-content-api
   },
   "algorithmic": {
     "algorithm": "Simplex Noise 3D",
     "complexity": {
+<<<<<<< HEAD
       "time": "O(n²) por sample",
       "space": "O(1)"
     },
@@ -25,4 +37,58 @@
   },
   "related_algorithms": ["perlin", "fbm"],
   "visual_aid": {}
+=======
+      "time": "O(n) por sample",
+      "space": "O(1)"
+    },
+    "why_this_algorithm": "Simplex Noise elimina los patrones direccionales visibles del Perlin Noise clásico al usar una rejilla simplex en lugar de cuadrada. Es más rápido en dimensiones superiores y produce gradientes más suaves.",
+    "comparison": [
+      {
+        "algorithm": "perlin",
+        "advantage": "Algoritmo clásico, bien documentado",
+        "disadvantage": "Artefactos direccionales visibles (alineación de cuadrícula)",
+        "best_for": "Generación de ruido de propósito general"
+      },
+      {
+        "algorithm": "simplex",
+        "advantage": "Sin artefactos direccionales, más rápido en alta dimensión",
+        "disadvantage": "Implementación ligeramente más compleja",
+        "best_for": "Texturas procedurales de alta calidad"
+      }
+    ],
+    "pseudocode": "function simplexNoise3D(x, y, z):\n    // Skew input space\n    s = (x + y + z) / 3\n    i = floor(x + s)\n    j = floor(y + s)\n    k = floor(z + s)\n    \n    // Unskew cell origin\n    t = (i + j + k) / 6\n    \n    // Calculate gradient contributions\n    return gradient(i, j, k, x-i+t, y-j+t, z-k+t)",
+    "parameters": [
+      {
+        "name": "amplitude",
+        "description": "Altura máxima de las olas",
+        "range": "0.1 - 5.0",
+        "default": 1.0
+      },
+      {
+        "name": "frequency",
+        "description": "Frecuencia espacial del ruido",
+        "range": "0.001 - 0.1",
+        "default": 0.01
+      },
+      {
+        "name": "octaves",
+        "description": "Número de capas de ruido superpuestas",
+        "range": "1 - 8",
+        "default": 4
+      },
+      {
+        "name": "persistence",
+        "description": "Factor de atenuación entre octavas",
+        "range": "0.0 - 1.0",
+        "default": 0.5
+      },
+      {
+        "name": "lacunarity",
+        "description": "Multiplicador de frecuencia entre octavas",
+        "range": "1.5 - 3.0",
+        "default": 2.0
+      }
+    ]
+  }
+>>>>>>> feature/CL-002-educational-content-api
 }

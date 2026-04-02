@@ -1,1 +1,83 @@
+<<<<<<< HEAD
 {}
+=======
+{
+  "id": "genetic_algorithms",
+  "category": "evolution",
+  "title": {
+    "scientific": "Natural Evolution",
+    "algorithmic": "Genetic Algorithms"
+  },
+  "scientific": {
+    "concept": "Natural evolution operates through natural selection acting on genetic variation. Organisms with adaptive traits have greater reproductive success, propagating those genes. Random mutations provide new genetic material upon which selection acts.",
+    "analogy": "Evolution is like a search algorithm: nature 'tries' millions of solutions simultaneously. Genes are parameters, physical fitness is the objective function, and reproduction is the optimization.",
+    "real_world_example": "Darwin's finch beaks adapted to different food sources in the Galápagos. Tetrapod fossils show the transition from fins to legs over 20 million years.",
+    "physics_formula": "Fisher's Fundamental Theorem: dX/dt = Var(X) where X=fitness",
+    "references": [
+      "Darwin, C. (1859). On the Origin of Species",
+      "Holland, J.H. (1975). Adaptation in Natural and Artificial Systems"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Genetic Algorithm (GA)",
+    "complexity": {
+      "time": "O(G × P × C) where G=generations, P=population, C=fitness cost",
+      "space": "O(P × L) where L=genome length"
+    },
+    "why_this_algorithm": "Genetic Algorithms efficiently explore complex search spaces using operators inspired by biological evolution: selection, crossover, and mutation. They are robust against multiple local optima.",
+    "comparison": [
+      {
+        "algorithm": "genetic",
+        "advantage": "Global exploration, handles multiple objectives",
+        "disadvantage": "Slow convergence, many parameters",
+        "best_for": "Complex, non-differentiable search spaces"
+      },
+      {
+        "algorithm": "gradient_descent",
+        "advantage": "Fast convergence near optima",
+        "disadvantage": "Gets stuck in local minima",
+        "best_for": "Convex differentiable functions"
+      },
+      {
+        "algorithm": "simulated_annealing",
+        "advantage": "Escapes local minima",
+        "disadvantage": "Critical temperature scheduling",
+        "best_for": "Combinatorial optimization"
+      }
+    ],
+    "pseudocode": "function geneticAlgorithm(popSize, generations, mutationRate):\n    population = initializeRandom(popSize)\n    \n    for gen in 0..generations:\n        // Evaluate fitness\n        fitness = evaluateFitness(population)\n        \n        // Selection (tournament)\n        selected = tournamentSelection(population, fitness, tournamentSize=3)\n        \n        // Crossover\n        offspring = []\n        for i in 0..popSize/2:\n            parent1, parent2 = selectParents(selected)\n            child1, child2 = crossover(parent1, parent2, rate=0.8)\n            offspring.add(child1, child2)\n        \n        // Mutation\n        for individual in offspring:\n            if random() < mutationRate:\n                mutate(individual)\n        \n        // Elitism: keep best individuals\n        population = elitismMerge(population, offspring, eliteCount=2)\n    \n    return bestIndividual(population)",
+    "parameters": [
+      {
+        "name": "population_size",
+        "description": "Population size",
+        "range": "10 - 1000",
+        "default": 100
+      },
+      {
+        "name": "mutation_rate",
+        "description": "Mutation probability per gene",
+        "range": "0.001 - 0.5",
+        "default": 0.1
+      },
+      {
+        "name": "crossover_rate",
+        "description": "Crossover probability",
+        "range": "0.5 - 1.0",
+        "default": 0.8
+      },
+      {
+        "name": "elitism_count",
+        "description": "Number of best individuals preserved",
+        "range": "1 - 10",
+        "default": 2
+      },
+      {
+        "name": "tournament_size",
+        "description": "Tournament selection size",
+        "range": "2 - 10",
+        "default": 3
+      }
+    ]
+  }
+}
+>>>>>>> feature/CL-002-educational-content-api

@@ -2,6 +2,7 @@
   "id": "atmosphere_composition",
   "category": "atmosphere",
   "title": {
+<<<<<<< HEAD
     "scientific": "Composicion Atmosferica",
     "algorithmic": "Gradientes de Color Atmosferico"
   },
@@ -25,4 +26,68 @@
   },
   "related_algorithms": ["perlin", "fbm"],
   "visual_aid": {}
+=======
+    "scientific": "Composición Atmosférica",
+    "algorithmic": "Simulación de Dispersión Rayleigh"
+  },
+  "scientific": {
+    "concept": "La atmósfera terrestre está compuesta principalmente por nitrógeno (78%), oxígeno (21%) y argón (0.93%). El color del cielo azul resulta de la dispersión Rayleigh, donde las moléculas de gas dispersan más luz azul que roja.",
+    "analogy": "La dispersión atmosférica es como una multitud de espejos diminutos en el aire: reflejan más la luz azul (de onda corta) hacia todos lados, mientras que la luz roja (onda larga) pasa directamente.",
+    "real_world_example": "Durante el amanecer/atardecer, la luz atraviesa más atmósfera, dispersando tanto azul que solo llega luz rojiza. En Marte, la atmósfera con polvo produce cielos rojizos de día y azules al amanecer.",
+    "physics_formula": "I(λ) = I₀(λ) × exp(-β(λ) × s)",
+    "references": [
+      "Bohren, C.F. & Huffman, D.R. (1983). Absorption and Scattering of Light by Small Particles",
+      "Pierrehumbert, R.T. (2010). Principles of Planetary Climate"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Rayleigh Scattering Shader",
+    "complexity": {
+      "time": "O(pixels × samples)",
+      "space": "O(1)"
+    },
+    "why_this_algorithm": "El modelo de dispersión Rayleigh proporciona resultados físicamente correctos para atmósferas planetarias. Se integra numéricamente a lo largo del rayo de vista para calcular la transmitancia y radiancia dispersada.",
+    "comparison": [
+      {
+        "algorithm": "rayleigh",
+        "advantage": "Físicamente correcto para atmósferas limpias",
+        "disadvantage": "Computacionalmente costoso para tiempo real",
+        "best_for": "Simulaciones realistas de atmósfera"
+      },
+      {
+        "algorithm": "gradient",
+        "advantage": "Muy rápido, trivial de implementar",
+        "disadvantage": "No responde a posición del sol ni altitud",
+        "best_for": "Juegos simples o vistas fijas"
+      }
+    ],
+    "pseudocode": "function rayleighScattering(rayOrigin, rayDir, sunDir):\n    t = intersectAtmosphere(rayOrigin, rayDir)\n    dt = t / samples\n    \n    totalRayleigh = 0\n    for i in 0..samples:\n        samplePos = rayOrigin + rayDir × (i × dt)\n        height = length(samplePos) - planetRadius\n        density = exp(-height / scaleHeight)\n        \n        opticalDepth += density × dt\n        sunRay = sunDir × intersectAtmosphere(samplePos, sunDir)\n        sunOptical = getOpticalDepth(samplePos, sunRay)\n        \n        scattering = phaseFunction × density × exp(-(opticalDepth + sunOptical))\n        totalRayleigh += scattering × dt\n    \n    return totalRayleigh",
+    "parameters": [
+      {
+        "name": "rayleigh_coefficient",
+        "description": "Coeficiente de dispersión Rayleigh",
+        "range": "0.001 - 0.1",
+        "default": 0.0058
+      },
+      {
+        "name": "mie_coefficient",
+        "description": "Coeficiente de dispersión Mie (partículas)",
+        "range": "0.0001 - 0.01",
+        "default": 0.0021
+      },
+      {
+        "name": "scale_height_rayleigh",
+        "description": "Altura de escala para dispersión Rayleigh",
+        "range": "1000 - 15000",
+        "default": 8500
+      },
+      {
+        "name": "samples",
+        "description": "Número de muestras para integración",
+        "range": "4 - 32",
+        "default": 16
+      }
+    ]
+  }
+>>>>>>> feature/CL-002-educational-content-api
 }

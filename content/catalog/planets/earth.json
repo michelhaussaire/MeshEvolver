@@ -1,5 +1,6 @@
 {
   "id": "earth",
+<<<<<<< HEAD
   "name": "Earth",
   "type": "terrestrial_planet",
   "category": "real",
@@ -32,4 +33,34 @@
     "Earth is the only known planet to support life",
     "It has a powerful magnetic field protecting it from solar radiation"
   ]
+=======
+  "name": "Tierra",
+  "type": "terrestrial_planet",
+  "description": "La Tierra es el tercer planeta del Sistema Solar y el único conocido que alberga vida. Tiene una atmósfera rica en oxígeno, agua líquida en superficie y un campo magnético que protege contra la radiación solar. Su satélite natural, la Luna, estabiliza su inclinación axial.",
+  "physical_properties": {
+    "mass_kg": 5.97e24,
+    "radius_km": 6371,
+    "age_gyr": 4.54,
+    "temperature_k": 288,
+    "density_g_cm3": 5.51,
+    "gravity_m_s2": 9.81
+  },
+  "visual_properties": {
+    "color_hex": "#1E90FF",
+    "texture_type": "blue_marble",
+    "brightness": 1.0,
+    "apparent_magnitude": -3.99
+  },
+  "fun_facts": [
+    "La Tierra no es una esfera perfecta: es un geoide achatado en los polos",
+    "El 71% de la superficie terrestre está cubierta por agua",
+    "La atmósfera protege la superficie de aproximadamente 100 toneladas de meteoroides diarios",
+    "El núcleo interno de hierro-níquel tiene una temperatura similar a la superficie del Sol"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/earth/",
+    "esa": "https://www.esa.int/Science_Exploration/Space_Science/Earth",
+    "wikipedia": "https://en.wikipedia.org/wiki/Earth"
+  }
+>>>>>>> feature/CL-002-educational-content-api
 }
