@@ -1,9 +1,9 @@
 {
   "id": "mars",
-<<<<<<< HEAD
-  "name": "Mars",
+  "name": "Marte",
   "type": "terrestrial_planet",
   "category": "real",
+  "description": "Marte es el cuarto planeta del Sistema Solar, conocido como el 'Planeta Rojo' por el óxido de hierro en su superficie. Tiene la montaña más alta del sistema solar (Olympus Mons) y el cañón más grande (Valles Marineris). Actualmente no tiene agua líquida estable en superficie.",
   "discovery": {
     "year": null,
     "discoverer": null,
@@ -14,13 +14,23 @@
     "mass_unit": "kg",
     "diameter": 6779,
     "diameter_unit": "km",
-    "gravity": 3.71
+    "gravity": 3.71,
+    "mass_kg": 6.39e23,
+    "radius_km": 3389,
+    "age_gyr": 4.6,
+    "temperature_k": 210,
+    "density_g_cm3": 3.93,
+    "gravity_m_s2": 3.72
   },
   "visual_properties": {
     "color": "red_orange",
     "atmosphere": true,
     "clouds": false,
-    "water_coverage": 0.0
+    "water_coverage": 0.0,
+    "color_hex": "#CD5C5C",
+    "texture_type": "red_desert",
+    "brightness": 0.8,
+    "apparent_magnitude": -2.01
   },
   "comparison_params": {
     "planet_genome": {
@@ -31,27 +41,7 @@
   },
   "fun_facts": [
     "Mars has the largest volcano in the solar system: Olympus Mons",
-    "Evidence suggests Mars once had liquid water on its surface"
-  ]
-=======
-  "name": "Marte",
-  "type": "terrestrial_planet",
-  "description": "Marte es el cuarto planeta del Sistema Solar, conocido como el 'Planeta Rojo' por el óxido de hierro en su superficie. Tiene la montaña más alta del sistema solar (Olympus Mons) y el cañón más grande (Valles Marineris). Actualmente no tiene agua líquida estable en superficie.",
-  "physical_properties": {
-    "mass_kg": 6.39e23,
-    "radius_km": 3389,
-    "age_gyr": 4.6,
-    "temperature_k": 210,
-    "density_g_cm3": 3.93,
-    "gravity_m_s2": 3.72
-  },
-  "visual_properties": {
-    "color_hex": "#CD5C5C",
-    "texture_type": "red_desert",
-    "brightness": 0.8,
-    "apparent_magnitude": -2.01
-  },
-  "fun_facts": [
+    "Evidence suggests Mars once had liquid water on its surface",
     "Un día marciano (sol) dura 24 horas y 37 minutos terrestres",
     "Marte tiene los polos helados más grandes que Texas",
     "El rover Perseverance está buscando signos de vida microbiana pasada",
@@ -62,5 +52,4 @@
     "esa": "https://www.esa.int/Science_Exploration/Space_Science/Mars",
     "wikipedia": "https://en.wikipedia.org/wiki/Mars"
   }
->>>>>>> feature/CL-002-educational-content-api
 }

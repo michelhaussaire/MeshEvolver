@@ -5,6 +5,8 @@ from typing import List, Optional
 import sys
 import os
 import random
+import json
+from pathlib import Path
 
 # Ensure the shared library is findable
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -441,3 +443,101 @@ async def export_planet_obj(params: PlanetGenomeParams, resolution: int = 128):
             "Content-Disposition": f"attachment; filename=planet_{params.seed}.obj"
         },
     )
+
+
+# Catalog endpoints
+CATALOG_DIR = Path(__file__).parent.parent.parent / "content" / "catalog"
+
+
+@app.get("/api/catalog/galaxies")
+async def get_galaxy_catalog():
+    """Retorna lista de galaxias reales disponibles"""
+    galaxies_dir = CATALOG_DIR / "galaxies"
+    if not galaxies_dir.exists():
+        raise HTTPException(
+            status_code=500, detail="Galaxy catalog directory not found"
+        )
+
+    galaxies = []
+    for json_file in galaxies_dir.glob("*.json"):
+        try:
+            with open(json_file, "r") as f:
+                data = json.load(f)
+                galaxies.append(
+                    {
+                        "id": data["id"],
+                        "name": data["name"],
+                        "type": data["type"],
+                        "description": data.get("description", ""),
+                        "physical_properties": data.get("physical_properties", {}),
+                        "fun_facts": data.get("fun_facts", [])[
+                            :2
+                        ],  # Preview: first 2 facts
+                    }
+                )
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"Error reading {json_file}: {e}")
+            continue
+
+    return galaxies
+
+
+@app.get("/api/catalog/galaxies/{galaxy_id}")
+async def get_galaxy_detail(galaxy_id: str):
+    """Retorna detalle completo de una galaxia específica"""
+    galaxy_file = CATALOG_DIR / "galaxies" / f"{galaxy_id}.json"
+    if not galaxy_file.exists():
+        raise HTTPException(status_code=404, detail=f"Galaxy '{galaxy_id}' not found")
+
+    try:
+        with open(galaxy_file, "r") as f:
+            return json.load(f)
+    except json.JSONDecodeError as e:
+        raise HTTPException(status_code=500, detail=f"Invalid JSON: {e}")
+
+
+@app.get("/api/catalog/planets")
+async def get_planet_catalog():
+    """Retorna lista de planetas reales disponibles"""
+    planets_dir = CATALOG_DIR / "planets"
+    if not planets_dir.exists():
+        raise HTTPException(
+            status_code=500, detail="Planet catalog directory not found"
+        )
+
+    planets = []
+    for json_file in planets_dir.glob("*.json"):
+        try:
+            with open(json_file, "r") as f:
+                data = json.load(f)
+                planets.append(
+                    {
+                        "id": data["id"],
+                        "name": data["name"],
+                        "type": data["type"],
+                        "description": data.get("description", ""),
+                        "physical_properties": data.get("physical_properties", {}),
+                        "fun_facts": data.get("fun_facts", [])[
+                            :2
+                        ],  # Preview: first 2 facts
+                    }
+                )
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"Error reading {json_file}: {e}")
+            continue
+
+    return planets
+
+
+@app.get("/api/catalog/planets/{planet_id}")
+async def get_planet_detail(planet_id: str):
+    """Retorna detalle completo de un planeta específico"""
+    planet_file = CATALOG_DIR / "planets" / f"{planet_id}.json"
+    if not planet_file.exists():
+        raise HTTPException(status_code=404, detail=f"Planet '{planet_id}' not found")
+
+    try:
+        with open(planet_file, "r") as f:
+            return json.load(f)
+    except json.JSONDecodeError as e:
+        raise HTTPException(status_code=500, detail=f"Invalid JSON: {e}")

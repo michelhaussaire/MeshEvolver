@@ -3,6 +3,7 @@ import GalaxyViewer from './components/GalaxyViewer';
 import GalaxyScene from './components/GalaxyScene';
 import PlanetScene from './components/PlanetScene';
 import UniverseMuseum from './components/UniverseMuseum';
+import RealCatalogBrowser from './components/RealCatalogBrowser';
 import { 
   Dna, 
   RotateCcw, 
@@ -13,7 +14,8 @@ import {
   LayoutGrid,
   ChevronRight,
   Library,
-  Check
+  Check,
+  BookOpen
 } from 'lucide-react';
 
 interface GalaxyGenome {
@@ -60,6 +62,7 @@ interface PlanetMesh {
 const GalaxyApp: React.FC = () => {
   const [view, setView] = useState<'galaxies' | 'planets'>('galaxies');
   const [showMuseum, setShowMuseum] = useState(false);
+  const [showCatalog, setShowCatalog] = useState(false);
   const [population, setPopulation] = useState<GalaxyGenome[]>([]);
   const [planetPopulation, setPlanetPopulation] = useState<PlanetGenome[]>([]);
   const [galaxies, setGalaxies] = useState<Record<number, GalaxyPoints>>({});
@@ -228,6 +231,13 @@ const GalaxyApp: React.FC = () => {
           >
             <Library size={18} />
             <span className="font-bold text-sm uppercase tracking-wider">Museum</span>
+          </button>
+          <button 
+            onClick={() => setShowCatalog(true)}
+            className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-slate-400 hover:bg-slate-800"
+          >
+            <BookOpen size={18} />
+            <span className="font-bold text-sm uppercase tracking-wider">Catálogo Real</span>
           </button>
         </nav>
 
@@ -405,6 +415,27 @@ const GalaxyApp: React.FC = () => {
       </main>
       
       {showMuseum && <UniverseMuseum onClose={() => setShowMuseum(false)} />}
+      {showCatalog && (
+        <RealCatalogBrowser
+          onClose={() => setShowCatalog(false)}
+          onSelectObject={(genome, type) => {
+            if (type === 'galaxy') {
+              setView('galaxies');
+              const galaxyGenome = genome as unknown as GalaxyGenome;
+              setPopulation([galaxyGenome]);
+              setGalaxies({});
+              setGeneration(1);
+            } else {
+              setView('planets');
+              const planetGenome = genome as unknown as PlanetGenome;
+              setPlanetPopulation([planetGenome]);
+              setPlanets({});
+              setPlanetGeneration(1);
+            }
+            setShowCatalog(false);
+          }}
+        />
+      )}
     </div>
   );
 };
