@@ -1,0 +1,28 @@
+{
+  "id": "atmosphere_composition",
+  "category": "atmosphere",
+  "title": {
+    "scientific": "Composicion Atmosferica",
+    "algorithmic": "Gradientes de Color Atmosferico"
+  },
+  "scientific": {
+    "concept": "La atmosfera de un planeta esta compuesta por gases que determinan su color y capacidad de retencion termica.",
+    "analogy": "Como una manta que atrapa el calor.",
+    "real_world_example": "La atmosfera de Venus es 96% CO2, causando un efecto invernadero extremo.",
+    "physics_formula": "P = rho * R * T / M",
+    "references": []
+  },
+  "algorithmic": {
+    "algorithm": "Gradiente esferico con ruido Perlin",
+    "complexity": {
+      "time": "O(n)",
+      "space": "O(1)"
+    },
+    "why_this_algorithm": "Permite variaciones suaves en la densidad atmosferica.",
+    "comparison": [],
+    "pseudocode": "function atmosphereColor(radius, density, noise): ...",
+    "parameters": []
+  },
+  "related_algorithms": ["perlin", "fbm"],
+  "visual_aid": {}
+}

@@ -1,0 +1,35 @@
+{
+  "id": "milky_way",
+  "name": "Vía Láctea",
+  "type": "spiral_galaxy",
+  "category": "real",
+  "discovery": {
+    "year": 1610,
+    "discoverer": "Galileo Galilei",
+    "method": "Observación telescópica"
+  },
+  "physical_properties": {
+    "mass": 1.5e12,
+    "mass_unit": "solar_masses",
+    "diameter": 105700,
+    "diameter_unit": "light_years",
+    "star_count": "100-400 mil millones"
+  },
+  "visual_properties": {
+    "color_temperature": 5778,
+    "barred_spiral": true,
+    "num_arms": 4
+  },
+  "comparison_params": {
+    "galaxy_genome": {
+      "num_arms": 4,
+      "arm_tightness": 0.3,
+      "core_density": 0.8,
+      "star_count": 100000
+    }
+  },
+  "fun_facts": [
+    "El bulbo central contiene un agujero negro supermasivo de 4 millones de masas solares",
+    "La Vía Láctea colisionará con Andrómeda en ~4.5 mil millones de años"
+  ]
+}

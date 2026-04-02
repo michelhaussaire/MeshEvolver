@@ -1,0 +1,28 @@
+{
+  "id": "ocean_waves",
+  "category": "ocean",
+  "title": {
+    "scientific": "Ocean Dynamics",
+    "algorithmic": "Procedural Wave Generation"
+  },
+  "scientific": {
+    "concept": "Ocean waves result from the superposition of local wind, regional currents, and tidal forces.",
+    "analogy": "Imagine throwing stones in a pond.",
+    "real_world_example": "The Pacific Ocean shows waves up to ~15m during storms.",
+    "physics_formula": "H = (U^2 * F) / g * tanh(2pi*d/L)",
+    "references": []
+  },
+  "algorithmic": {
+    "algorithm": "3D Simplex Noise",
+    "complexity": {
+      "time": "O(n^2) per sample",
+      "space": "O(1)"
+    },
+    "why_this_algorithm": "Simplex eliminates visible directional artifacts from Perlin.",
+    "comparison": [],
+    "pseudocode": "function simplexNoise3D(x, y, z): ...",
+    "parameters": []
+  },
+  "related_algorithms": ["perlin", "fbm"],
+  "visual_aid": {}
+}

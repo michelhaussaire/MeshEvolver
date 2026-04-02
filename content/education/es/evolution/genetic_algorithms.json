@@ -1,0 +1,28 @@
+{
+  "id": "genetic_algorithms",
+  "category": "evolution",
+  "title": {
+    "scientific": "Evolucion Estelar",
+    "algorithmic": "Algoritmos Geneticos"
+  },
+  "scientific": {
+    "concept": "Las estrellas evolucionan a traves de ciclos de vida determinados por su masa inicial.",
+    "analogy": "Como una vela que se consume lentamente.",
+    "real_world_example": "El Sol es una estrella de secuencia principal de tipo G2V.",
+    "physics_formula": "E = mc^2",
+    "references": []
+  },
+  "algorithmic": {
+    "algorithm": "Algoritmo Genetico",
+    "complexity": {
+      "time": "O(g * p^2)",
+      "space": "O(p)"
+    },
+    "why_this_algorithm": "Optimizacion inspirada en la evolucion natural.",
+    "comparison": [],
+    "pseudocode": "function geneticAlgorithm(population, generations): ...",
+    "parameters": []
+  },
+  "related_algorithms": ["simulated_annealing", "particle_swarm"],
+  "visual_aid": {}
+}

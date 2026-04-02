@@ -1,0 +1,35 @@
+{
+  "id": "andromeda",
+  "name": "Andromeda",
+  "type": "spiral_galaxy",
+  "category": "real",
+  "discovery": {
+    "year": 964,
+    "discoverer": "Abd al-Rahman al-Sufi",
+    "method": "Naked eye observation"
+  },
+  "physical_properties": {
+    "mass": 1.5e12,
+    "mass_unit": "solar_masses",
+    "diameter": 220000,
+    "diameter_unit": "light_years",
+    "star_count": "1 trillion"
+  },
+  "visual_properties": {
+    "color_temperature": 6500,
+    "barred_spiral": false,
+    "num_arms": 2
+  },
+  "comparison_params": {
+    "galaxy_genome": {
+      "num_arms": 2,
+      "arm_tightness": 0.4,
+      "core_density": 0.7,
+      "star_count": 500000
+    }
+  },
+  "fun_facts": [
+    "Andromeda is approaching the Milky Way at 110 km/s",
+    "It contains a supermassive black hole of 100-230 million solar masses"
+  ]
+}

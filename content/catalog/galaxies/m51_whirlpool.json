@@ -1,0 +1,35 @@
+{
+  "id": "m51_whirlpool",
+  "name": "Whirlpool Galaxy",
+  "type": "spiral_galaxy",
+  "category": "real",
+  "discovery": {
+    "year": 1773,
+    "discoverer": "Charles Messier",
+    "method": "Telescopic observation"
+  },
+  "physical_properties": {
+    "mass": 160000000000,
+    "mass_unit": "solar_masses",
+    "diameter": 60000,
+    "diameter_unit": "light_years",
+    "star_count": "100 billion"
+  },
+  "visual_properties": {
+    "color_temperature": 5500,
+    "barred_spiral": false,
+    "num_arms": 2
+  },
+  "comparison_params": {
+    "galaxy_genome": {
+      "num_arms": 2,
+      "arm_tightness": 0.5,
+      "core_density": 0.6,
+      "star_count": 100000
+    }
+  },
+  "fun_facts": [
+    "M51 is interacting with NGC 5195, a dwarf galaxy",
+    "It is one of the first galaxies where spiral structure was observed"
+  ]
+}

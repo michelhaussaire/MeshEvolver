@@ -174,3 +174,37 @@ curl -X POST "http://localhost:8000/api/export-planet-obj?resolution=128" \
 
 **422 Unprocessable Entity:**
 Invalid parameters or missing required fields.
+
+---
+
+# CosmosLearn API Additions
+
+## Overview
+
+This section documents new endpoints for CosmosLearn educational platform.
+
+## Education Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/education/content/{category}/{content_id}` | Get dual explanation content |
+| `GET` | `/education/algorithms` | List available procedural algorithms |
+| `GET` | `/education/algorithms/{id}/compare` | Compare algorithms |
+
+## Challenge Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/challenges/` | List all gamified challenges |
+| `GET` | `/challenges/{id}` | Get challenge details |
+| `POST` | `/challenges/{id}/start` | Start a challenge |
+| `POST` | `/challenges/{id}/progress` | Update challenge progress |
+| `POST` | `/challenges/{id}/complete` | Complete challenge and get score |
+| `GET` | `/challenges/{id}/leaderboard` | Get challenge leaderboard |
+
+## Generation V2 Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/generation/v2/generate` | Generate procedural object with educational metadata |
+| `GET` | `/generation/v2/real/{type}/{id}` | Get real astronomical object reference |

@@ -1,0 +1,35 @@
+{
+  "id": "mars",
+  "name": "Mars",
+  "type": "terrestrial_planet",
+  "category": "real",
+  "discovery": {
+    "year": null,
+    "discoverer": null,
+    "method": "naked_eye"
+  },
+  "physical_properties": {
+    "mass": 6.39e23,
+    "mass_unit": "kg",
+    "diameter": 6779,
+    "diameter_unit": "km",
+    "gravity": 3.71
+  },
+  "visual_properties": {
+    "color": "red_orange",
+    "atmosphere": true,
+    "clouds": false,
+    "water_coverage": 0.0
+  },
+  "comparison_params": {
+    "planet_genome": {
+      "radius": 0.53,
+      "water_coverage": 0.0,
+      "atmosphere_type": "thin"
+    }
+  },
+  "fun_facts": [
+    "Mars has the largest volcano in the solar system: Olympus Mons",
+    "Evidence suggests Mars once had liquid water on its surface"
+  ]
+}

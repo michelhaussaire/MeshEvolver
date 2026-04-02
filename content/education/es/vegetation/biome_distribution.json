@@ -1,0 +1,28 @@
+{
+  "id": "biome_distribution",
+  "category": "vegetation",
+  "title": {
+    "scientific": "Distribucion de Biomas",
+    "algorithmic": "Generacion de Biomas Procedurales"
+  },
+  "scientific": {
+    "concept": "Los biomas se distribuyen segun temperatura, precipitacion y latitud.",
+    "analogy": "Como diferentes habitaciones en una casa tienen diferentes temperaturas.",
+    "real_world_example": "La selva amazoniana tiene alta precipitacion y temperatura constante.",
+    "physics_formula": "Whittaker diagram",
+    "references": []
+  },
+  "algorithmic": {
+    "algorithm": "Voronoi + Ruido de valores",
+    "complexity": {
+      "time": "O(n log n)",
+      "space": "O(n)"
+    },
+    "why_this_algorithm": "Voronoi crea regiones naturales, ruido agrega variacion.",
+    "comparison": [],
+    "pseudocode": "function generateBiome(temperature, moisture): ...",
+    "parameters": []
+  },
+  "related_algorithms": ["worley", "perlin"],
+  "visual_aid": {}
+}
