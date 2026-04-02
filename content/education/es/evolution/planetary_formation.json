@@ -1,0 +1,124 @@
+{
+  "id": "planetary_formation",
+  "category": "evolution",
+  "title": {
+    "scientific": "Formación Planetaria: Del Disco Protoplanetario a Mundos Habitables",
+    "algorithmic": "Simulación de Agregación y Diferenciación Planetaria con Modelos de Acumulación"
+  },
+  "scientific": {
+    "concept": "Los planetas se forman a partir de discos protoplanetarios de gas y polvo que rodean estrellas jóvenes. El proceso involucra nucleación de partículas de polvo, crecimiento por acreción hasta formar planetesimales, colisiones gravitacionales para crear protoplanetas, y finalmente diferenciación interna y limpieza orbital de escombros.",
+    "analogy": "La formación planetaria es como hacer una bola de nieve gigante. Empiezas con un copo pequeño (grano de polvo) que rueda cuesta abajo acumulando más nieve. Conforme crece, su gravedad atrae más material hasta que se vuelve lo suficientemente masivo como para 'limpiar' su vecindario, dejando solo el planeta y sus lunas.",
+    "real_world_example": "El Sistema Solar tiene 4.6 mil millones de años y muestra evidencias claras de su formación: los planetas interiores rocosos (Mercurio, Venus, Tierra, Marte) y los exteriores gaseosos (Júpiter, Saturno, Urano, Neptuno). El cinturón de asteroides entre Marte y Júpiter representa material que nunca se agregó debido a perturbaciones gravitacionales de Júpiter.",
+    "physics_formula": {
+      "hill_sphere": "R_H = a × (M_p / (3M_*))^(1/3)",
+      "accretion_rate": "dM/dt = π × R² × ρ × v",
+      "oligarchic_growth": "M ∝ t^(3/2)",
+      "escape_velocity": "v_e = √(2GM/R)",
+      "variables": {
+        "R_H": "radio de Hill (zona de influencia gravitacional)",
+        "a": "distancia orbital semi-mayor",
+        "M_p": "masa del planeta",
+        "M_*": "masa de la estrella",
+        "dM/dt": "tasa de acreción",
+        "ρ": "densidad del disco",
+        "v": "velocidad relativa",
+        "t": "tiempo",
+        "G": "constante gravitacional",
+        "R": "radio del planeta"
+      }
+    },
+    "key_concepts": [
+      "Disco protoplanetario: nube de gas y polvo en rotación alrededor de protoestrella",
+      "Planetesimales: cuerpos de 1-10 km formados por acreción de polvo",
+      "Embrión planetario: protoplaneta masivo que domina su zona de acreción",
+      "Línea de nieve: distancia donde el hielo puede existir (afecta composición planetaria)",
+      "Migración planetaria: cambio en órbita debido a interacciones con disco",
+      "Gran Impacto: colisión entre protoplanetas (ej. formación de la Luna)",
+      "Diferenciación: separación de capas por densidad (núcleo, manto, corteza)"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Modelo de acreción gravitacional con integración numérica de N-cuerpos y acreción por impacto inelástico",
+    "complexity": {
+      "time": "O(n² × t) donde n es número de partículas y t es pasos de tiempo; optimizable a O(n log n) con Barnes-Hut",
+      "space": "O(n) para almacenar estado de todas las partículas"
+    },
+    "why_this_algorithm": "La simulación de N-cuerpos captura las interacciones gravitacionales esenciales. La acreción por impacto modela cómo los planetesimales crecen por colisiones. Es el estándar de oro para modelado de formación planetaria.",
+    "comparison": {
+      "smoothed_particle": "SPH es mejor para fluidos pero más costoso",
+      "monte_carlo": "Monte Carlo es más rápido pero pierde dinámica orbital exacta",
+      "statistical": "Modelos estadísticos son útiles para poblaciones pero no individuos"
+    },
+    "pseudocode": "function simulatePlanetaryFormation(initialDisk, simulationTime):\n    particles = initializeDiskParticles(initialDisk)\n    \n    for t = 0 to simulationTime with dt:\n        // Calcular fuerzas gravitacionales\n        for each particle i:\n            force[i] = zero_vector\n            for each particle j != i:\n                r = position[j] - position[i]\n                force[i] += G * mass[i] * mass[j] * normalize(r) / |r|²\n        \n        // Actualizar posiciones (integración Verlet)\n        for each particle i:\n            acceleration = force[i] / mass[i]\n            velocity[i] += acceleration * dt\n            position[i] += velocity[i] * dt\n        \n        // Detectar colisiones y acretar\n        for each pair (i, j):\n            if distance(position[i], position[j]) < (radius[i] + radius[j]):\n                // Colisión inelástica: conservar momentum\n                newMass = mass[i] + mass[j]\n                newVelocity = (mass[i]*velocity[i] + mass[j]*velocity[j]) / newMass\n                newPosition = (mass[i]*position[i] + mass[j]*position[j]) / newMass\n                newRadius = (radius[i]³ + radius[j]³)^(1/3)\n                \n                // Fusionar partículas\n                mass[i] = newMass\n                velocity[i] = newVelocity\n                position[i] = newPosition\n                radius[i] = newRadius\n                remove(particles, j)\n        \n        // Aplicar arrastre del disco (fricción)\n        for each particle i:\n            velocity[i] *= (1 - dragCoefficient * dt)\n    \n    return particles",
+    "parameters": [
+      {
+        "name": "particle_count",
+        "type": "integer",
+        "range": [100, 10000],
+        "default": 1000,
+        "description": "Número inicial de partículas planetesimales"
+      },
+      {
+        "name": "initial_mass",
+        "type": "float",
+        "range": [1e15, 1e20],
+        "default": 1e18,
+        "unit": "kg",
+        "description": "Masa inicial de cada planetesimal"
+      },
+      {
+        "name": "disk_radius",
+        "type": "float",
+        "range": [1.0, 100.0],
+        "default": 30.0,
+        "unit": "AU",
+        "description": "Radio del disco protoplanetario"
+      },
+      {
+        "name": "accretion_efficiency",
+        "type": "float",
+        "range": [0.5, 1.0],
+        "default": 0.9,
+        "description": "Eficiencia de transferencia de masa en colisiones"
+      },
+      {
+        "name": "stellar_mass",
+        "type": "float",
+        "range": [0.1, 10.0],
+        "default": 1.0,
+        "unit": "solar_masses",
+        "description": "Masa de la estrella central"
+      },
+      {
+        "name": "snow_line_distance",
+        "type": "float",
+        "range": [1.0, 10.0],
+        "default": 2.7,
+        "unit": "AU",
+        "description": "Distancia de la línea de nieve (afecta densidad)"
+      },
+      {
+        "name": "time_step",
+        "type": "float",
+        "range": [1000, 100000],
+        "default": 10000,
+        "unit": "years",
+        "description": "Paso de tiempo de simulación"
+      }
+    ]
+  },
+  "related_algorithms": [
+    "n_body_simulation",
+    "smoothed_particle_hydrodynamics",
+    "collision_detection_spatial_hash",
+    "barnes_hut_tree"
+  ],
+  "difficulty_level": 5,
+  "estimated_time_minutes": 45,
+  "visualization_hints": {
+    "color_mapping": "Gradiente por masa: azul (pequeño), verde (medio), rojo (grande); opacidad por densidad",
+    "particle_size": "Radio proporcional a la masa^(1/3)",
+    "orbital_trails": "Mostrar trayectorias para ver resonancias y estabilidad",
+    "time_compression": "Acelerar visualmente millones de años por segundo"
+  }
+}

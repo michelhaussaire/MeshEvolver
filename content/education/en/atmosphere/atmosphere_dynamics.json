@@ -1,0 +1,112 @@
+{
+  "id": "atmosphere_dynamics",
+  "category": "atmosphere",
+  "title": {
+    "scientific": "Atmospheric Dynamics: Jet Streams and Global Circulation",
+    "algorithmic": "Atmospheric Pattern Simulation using Vector Fields and Procedural Noise"
+  },
+  "scientific": {
+    "concept": "Earth's atmosphere is a dynamic fluid driven by thermal gradients, planetary rotation (Coriolis effect), and the distribution of continental and oceanic masses. Atmospheric circulation cells (Hadley, Ferrel, and Polar) determine global climate patterns.",
+    "analogy": "The atmosphere works like a global heating system where the Equator acts as a hot radiator and the poles as cold zones. Warm air rises at the Equator, drifts toward the poles at high altitude, cools and sinks, creating circulation loops similar to convection cells in heated liquid.",
+    "real_world_example": "The Jet Stream is a high-speed air current (up to 400 km/h) flowing west-to-east in the upper atmosphere. This 'river in the sky' dramatically affects weather patterns and air navigation, causing turbulence and diverting storm systems.",
+    "physics_formula": {
+      "geostrophic_wind": "Vg = (1/ρf) × (∂p/∂n)",
+      "coriolis_parameter": "f = 2Ω sin(φ)",
+      "thermal_wind": "∂V/∂z = (g/fT) × (∂T/∂y)",
+      "rossby_number": "Ro = U/(fL)",
+      "variables": {
+        "Vg": "geostrophic velocity",
+        "ρ": "air density",
+        "f": "Coriolis parameter",
+        "∂p/∂n": "pressure gradient perpendicular to flow",
+        "Ω": "Earth's angular velocity",
+        "φ": "latitude",
+        "U": "characteristic velocity",
+        "L": "characteristic length"
+      }
+    },
+    "key_concepts": [
+      "Coriolis effect: deflection of air masses due to Earth's rotation",
+      "Hadley cell: tropical circulation between Equator and ~30° latitude",
+      "Ferrel cell: mid-latitude circulation between 30°-60°",
+      "Polar cell: circulation between 60°-90° latitude",
+      "Jet Stream: high-velocity currents in the tropopause",
+      "Atmospheric fronts: transition zones between air masses of different temperatures",
+      "Rossby number: ratio of inertial to Coriolis forces"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "2D vector field synthesis using Perlin curl-noise to generate incompressible flows",
+    "complexity": {
+      "time": "O(n) where n is the number of pixels/voxels in the simulation mesh",
+      "space": "O(n) to store the velocity field"
+    },
+    "why_this_algorithm": "Curl-noise guarantees the vector field is divergence-free (incompressible), a fundamental property of atmospheric fluids. Perlin noise provides organic and scalable patterns.",
+    "comparison": {
+      "navier_stokes": "Navier-Stokes is physically exact but computationally expensive for real-time",
+      "curl_noise": "Curl-noise is artistically convincing and efficient, though not physically rigorous",
+      "spectral_methods": "Spectral methods capture large scales but require more memory"
+    },
+    "pseudocode": "function generateAtmosphereField(time, latitude, windStrength):\n    // Generate scaled Perlin noise\n    noiseX = perlinNoise(x*scale, y*scale, time*speed)\n    noiseY = perlinNoise(x*scale + 100, y*scale + 100, time*speed)\n    \n    // Apply curl operator to guarantee divergence-free\n    // ∂v/∂x - ∂u/∂y = 0\n    dxNoiseY = derivative(noiseY, x)\n    dyNoiseX = derivative(noiseX, y)\n    \n    u = dxNoiseY * windStrength  // x-component of wind\n    v = -dyNoiseX * windStrength // y-component of wind\n    \n    // Add latitude influence (simplified Coriolis effect)\n    coriolisFactor = sin(latitude * π/180)\n    u += coriolisFactor * 0.3\n    \n    // Add large circulation cells\n    hadleyCell = sin(y * π/hadleyHeight) * hadleyStrength\n    v += hadleyCell\n    \n    return vectorField(u, v)",
+    "parameters": [
+      {
+        "name": "wind_speed",
+        "type": "float",
+        "range": [5.0, 200.0],
+        "default": 50.0,
+        "unit": "km/h",
+        "description": "Average wind speed"
+      },
+      {
+        "name": "noise_octaves",
+        "type": "integer",
+        "range": [1, 8],
+        "default": 4,
+        "description": "Number of noise octaves for detail"
+      },
+      {
+        "name": "hadley_intensity",
+        "type": "float",
+        "range": [0.0, 1.0],
+        "default": 0.7,
+        "description": "Intensity of circulation cells"
+      },
+      {
+        "name": "jet_stream_strength",
+        "type": "float",
+        "range": [0.0, 100.0],
+        "default": 30.0,
+        "unit": "m/s",
+        "description": "Jet stream velocity strength"
+      },
+      {
+        "name": "turbulence",
+        "type": "float",
+        "range": [0.0, 1.0],
+        "default": 0.3,
+        "description": "Atmospheric turbulence level"
+      },
+      {
+        "name": "pressure_gradient",
+        "type": "float",
+        "range": [0.001, 0.1],
+        "default": 0.01,
+        "unit": "hPa/km",
+        "description": "Pressure gradient driving the wind"
+      }
+    ]
+  },
+  "related_algorithms": [
+    "navier_stokes_solver",
+    "curl_noise_flow",
+    "spectral_atmosphere",
+    "cellular_automata_weather"
+  ],
+  "difficulty_level": 4,
+  "estimated_time_minutes": 30,
+  "visualization_hints": {
+    "color_mapping": "Gradient from blue (cold/high pressure) to red (warm/low pressure)",
+    "vector_display": "Arrows or flow lines to show wind direction",
+    "cloud_correlation": "Clouds form where there is convergence and air ascent"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "id": "mars",
+  "name": "Marte",
+  "name_en": "Mars",
+  "type": "terrestrial_planet",
+  "category": "real",
+  "parent_star": "sol",
+  "discovery": {
+    "year": -1500,
+    "note": "Conocido desde la antigüedad por los babilonios, egipcios y chinos como 'estrella errante' roja"
+  },
+  "orbital_properties": {
+    "semi_major_axis": {
+      "value": 1.524,
+      "unit": "au",
+      "km": 227939366
+    },
+    "orbital_period": {
+      "value": 687,
+      "unit": "days"
+    },
+    "eccentricity": 0.0934,
+    "inclination": {
+      "value": 1.85,
+      "unit": "degrees"
+    }
+  },
+  "physical_properties": {
+    "radius": {
+      "value": 3389.5,
+      "unit": "km",
+      "note": "Aproximadamente la mitad del radio terrestre"
+    },
+    "mass": {
+      "value": 6.417e23,
+      "unit": "kg",
+      "earth_masses": 0.107
+    },
+    "gravity": {
+      "value": 3.72,
+      "unit": "m/s²",
+      "earth_gravity": 0.38
+    },
+    "density": {
+      "value": 3.93,
+      "unit": "g/cm³"
+    },
+    "temperature": {
+      "value": 210,
+      "unit": "kelvin",
+      "celsius": -63,
+      "fahrenheit": -81,
+      "range": {
+        "min": 130,
+        "max": 308,
+        "unit": "kelvin"
+      }
+    }
+  },
+  "atmosphere": {
+    "composition": {
+      "carbon_dioxide": 95.3,
+      "nitrogen": 2.7,
+      "argon": 1.6,
+      "oxygen": 0.13,
+      "carbon_monoxide": 0.07,
+      "unit": "percentage"
+    },
+    "pressure": {
+      "value": 0.006,
+      "unit": "atm",
+      "pascals": 610,
+      "note": "Aproximadamente 0.6% de la presión atmosférica terrestre"
+    },
+    "cloud_coverage": {
+      "value": 0.05,
+      "unit": "fraction",
+      "note": "Nubes de hielo de dióxido de carbono principalmente en invierno"
+    }
+  },
+  "surface": {
+    "water_coverage": {
+      "value": 0.0,
+      "unit": "fraction",
+      "note": "Agua líquida no estable en superficie debido a baja presión"
+    },
+    "land_coverage": {
+      "value": 1.0,
+      "unit": "fraction"
+    },
+    "ice_coverage": {
+      "value": 0.02,
+      "unit": "fraction",
+      "note": "Hielo de agua en casquetes polares y bajo superficie"
+    },
+    "biomes": [
+      "rocky_terrain",
+      "dusty_plains",
+      "polar_ice_caps",
+      "canyons",
+      "volcanic_regions"
+    ]
+  },
+  "comparison_params": {
+    "genome": {
+      "planet_type": "terrestrial",
+      "radius": 0.53,
+      "temperature": 210,
+      "water_coverage": 0.0,
+      "atmosphere_density": 0.006,
+      "cloud_density": 0.05,
+      "noise": 0.6
+    }
+  },
+  "fun_facts": [
+    "Marte tiene el volcán más grande del Sistema Solar: el Monte Olimpo (Olympus Mons), con 21 km de altura y 600 km de diámetro en su base.",
+    "El día marciano (sol) dura 24 horas y 37 minutos, muy similar al día terrestre. Un año marciano dura 687 días terrestres.",
+    "Marte tiene dos lunas pequeñas: Fobos (miedo) y Deimos (terror), nombradas por los hijos de Ares (Marte), el dios de la guerra en la mitología griega.",
+    "El valle más grande del Sistema Solar es Valles Marineris en Marte, con 4,000 km de largo, 200 km de ancho y hasta 7 km de profundidad.",
+    "La NASA ha confirmado la presencia de agua líquida salada intermitente en Marte, principalmente en pendientes cálidas durante el verano marciano."
+  ],
+  "sources": [
+    "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html",
+    "https://solarsystem.nasa.gov/mars/overview/",
+    "https://mars.nasa.gov/",
+    "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express",
+    "https://mars.jpl.nasa.gov/mars2020/"
+  ]
+}

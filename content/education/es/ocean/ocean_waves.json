@@ -1,0 +1,107 @@
+{
+  "id": "ocean_waves",
+  "category": "ocean",
+  "title": {
+    "scientific": "Dinámica de Ondas Oceánicas: Desde las Mareas hasta el Clima Global",
+    "algorithmic": "Simulación de Ondas Oceánicas con Algoritmos Procedurales"
+  },
+  "scientific": {
+    "concept": "Las olas oceánicas son perturbaciones periódicas que transportan energía a través de la superficie del agua, causadas principalmente por el viento, las mareas gravitacionales y terremotos submarinos. La física de las olas está gobernada por la ecuación de onda y las fuerzas de tensión superficial y gravedad.",
+    "analogy": "Imagina lanzar una piedra en un estanque tranquilo. Las ondas circulares que se expanden representan cómo la energía se transfiere a través del agua sin que el agua misma se desplace significativamente. Similarmente, las olas oceánicas transportan energía a través de vastas distancias.",
+    "real_world_example": "Las mareas océanicas son ondas extremadamente largas causadas por las fuerzas gravitacionales de la Luna y el Sol. En la Bahía de Fundy, Canadá, la diferencia entre marea alta y baja puede alcanzar los 16 metros, el mayor rango de mareas del mundo.",
+    "physics_formula": {
+      "wave_speed": "v = λ × f",
+      "wave_energy": "E = (1/8) × ρ × g × H² × λ",
+      "tidal_force": "F_tidal ∝ (M/r³)",
+      "variables": {
+        "v": "velocidad de onda (m/s)",
+        "λ": "longitud de onda (m)",
+        "f": "frecuencia (Hz)",
+        "ρ": "densidad del agua (kg/m³)",
+        "g": "aceleración gravitacional (m/s²)",
+        "H": "altura de ola (m)",
+        "M": "masa del cuerpo celeste",
+        "r": "distancia al cuerpo celeste"
+      }
+    },
+    "key_concepts": [
+      "Longitud de onda: distancia entre crestas consecutivas",
+      "Período: tiempo entre el paso de dos crestas por un punto",
+      "Velocidad de fase: velocidad a la que se propaga la onda",
+      "Olas de viento: generadas por fricción entre aire y agua",
+      "Mareas: ondas con período de ~12.5 horas causadas por la gravedad lunar",
+      "Tsunamis: olas de período largo causadas por desplazamiento vertical del agua"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Suma de Gerstner Waves (Trochoidal Waves) con Perlin Noise para perturbaciones realistas",
+    "complexity": {
+      "time": "O(n × m) donde n es el número de vértices de la malla y m es el número de componentes de onda",
+      "space": "O(n) para almacenar el estado de la superficie del océano"
+    },
+    "why_this_algorithm": "Las ondas de Gerstner modelan adecuadamente el movimiento circular de las partículas de agua (no solo movimiento vertical), creando crestas más afiladas y valles más planos como en olas reales. La combinación con ruido Perlin añade irregularidad natural.",
+    "comparison": {
+      "gerstner_vs_sinusoidal": "Las ondas senoidales simples no capturan el movimiento orbital de las partículas de agua",
+      "fft_vs_gerstner": "FFT (Fast Fourier Transform) es más eficiente para océanos a gran escala pero menos intuitivo",
+      "perlin_advantage": "Perlin noise proporciona detalles de alta frecuencia que simulan la rugosidad superficial del agua"
+    },
+    "pseudocode": "function generateOceanMesh(time, windDirection, waveIntensity):\n    for each vertex (x, z) in grid:\n        y = 0\n        for each waveComponent in waveSpectrum:\n            k = waveVector (direction * frequency)\n            A = waveComponent.amplitude\n            w = waveComponent.frequency\n            phi = waveComponent.phase\n            // Onda de Gerstner\n            y += A * cos(dot(k, (x,z)) - w*time + phi)\n            x -= k.x * (A/w) * sin(dot(k, (x,z)) - w*time + phi)\n            z -= k.z * (A/w) * sin(dot(k, (x,z)) - w*time + phi)\n        // Añadir ruido para detalles\n        y += perlinNoise(x*scale, z*scale, time) * noiseAmplitude\n    return mesh",
+    "parameters": [
+      {
+        "name": "wave_count",
+        "type": "integer",
+        "range": [1, 32],
+        "default": 8,
+        "description": "Número de componentes de onda a sumar"
+      },
+      {
+        "name": "amplitude",
+        "type": "float",
+        "range": [0.1, 20.0],
+        "default": 2.0,
+        "description": "Altura máxima de las olas en metros"
+      },
+      {
+        "name": "wavelength",
+        "type": "float",
+        "range": [1.0, 500.0],
+        "default": 50.0,
+        "description": "Longitud de onda dominante en metros"
+      },
+      {
+        "name": "wind_direction",
+        "type": "float",
+        "range": [0.0, 360.0],
+        "default": 45.0,
+        "description": "Dirección del viento en grados"
+      },
+      {
+        "name": "choppiness",
+        "type": "float",
+        "range": [0.0, 1.0],
+        "default": 0.5,
+        "description": "Intensidad del movimiento horizontal (efecto Gerstner)"
+      },
+      {
+        "name": "noise_scale",
+        "type": "float",
+        "range": [0.01, 1.0],
+        "default": 0.1,
+        "description": "Escala del ruido Perlin para detalles"
+      }
+    ]
+  },
+  "related_algorithms": [
+    "fft_ocean_simulation",
+    "particle_based_fluid_sph",
+    "heightfield_ocean",
+    "spectral_wave_synthesis"
+  ],
+  "difficulty_level": 3,
+  "estimated_time_minutes": 25,
+  "visualization_hints": {
+    "color_mapping": "Azules profundos para valles, azules claros/verdosos para crestas",
+    "animation_speed": "La velocidad debe reflejar el período de onda (olas largas = movimiento lento)",
+    "foam_generation": "Aparece en crestas donde la inclinación excede un umbral"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "planetary_formation",
+  "category": "evolution",
+  "title": {
+    "scientific": "Planetary Formation: From Protoplanetary Disk to Habitable Worlds",
+    "algorithmic": "Planetary Accretion and Differentiation Simulation using Accumulation Models"
+  },
+  "scientific": {
+    "concept": "Planets form from protoplanetary disks of gas and dust surrounding young stars. The process involves dust particle nucleation, growth by accretion to form planetesimals, gravitational collisions to create protoplanets, and finally internal differentiation and orbital debris clearing.",
+    "analogy": "Planetary formation is like making a giant snowball. You start with a small flake (dust grain) that rolls downhill accumulating more snow. As it grows, its gravity attracts more material until it becomes massive enough to 'clear' its neighborhood, leaving only the planet and its moons.",
+    "real_world_example": "The Solar System is 4.6 billion years old and shows clear evidence of its formation: the inner rocky planets (Mercury, Venus, Earth, Mars) and outer gas giants (Jupiter, Saturn, Uranus, Neptune). The asteroid belt between Mars and Jupiter represents material that never accreted due to Jupiter's gravitational perturbations.",
+    "physics_formula": {
+      "hill_sphere": "R_H = a × (M_p / (3M_*))^(1/3)",
+      "accretion_rate": "dM/dt = π × R² × ρ × v",
+      "oligarchic_growth": "M ∝ t^(3/2)",
+      "escape_velocity": "v_e = √(2GM/R)",
+      "variables": {
+        "R_H": "Hill radius (gravitational influence zone)",
+        "a": "semi-major orbital distance",
+        "M_p": "planet mass",
+        "M_*": "star mass",
+        "dM/dt": "accretion rate",
+        "ρ": "disk density",
+        "v": "relative velocity",
+        "t": "time",
+        "G": "gravitational constant",
+        "R": "planet radius"
+      }
+    },
+    "key_concepts": [
+      "Protoplanetary disk: rotating gas and dust cloud around protostar",
+      "Planetesimals: 1-10 km bodies formed by dust accretion",
+      "Planetary embryo: massive protoplanet dominating its accretion zone",
+      "Snow line: distance where ice can exist (affects planetary composition)",
+      "Planetary migration: orbital change due to disk interactions",
+      "Giant Impact: collision between protoplanets (e.g., Moon formation)",
+      "Differentiation: layer separation by density (core, mantle, crust)"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Gravitational accretion model with N-body numerical integration and inelastic impact accretion",
+    "complexity": {
+      "time": "O(n² × t) where n is number of particles and t is time steps; optimizable to O(n log n) with Barnes-Hut",
+      "space": "O(n) to store state of all particles"
+    },
+    "why_this_algorithm": "N-body simulation captures the essential gravitational interactions. Impact accretion models how planetesimals grow through collisions. It is the gold standard for planetary formation modeling.",
+    "comparison": {
+      "smoothed_particle": "SPH is better for fluids but more expensive",
+      "monte_carlo": "Monte Carlo is faster but loses exact orbital dynamics",
+      "statistical": "Statistical models are useful for populations but not individuals"
+    },
+    "pseudocode": "function simulatePlanetaryFormation(initialDisk, simulationTime):\n    particles = initializeDiskParticles(initialDisk)\n    \n    for t = 0 to simulationTime with dt:\n        // Calculate gravitational forces\n        for each particle i:\n            force[i] = zero_vector\n            for each particle j != i:\n                r = position[j] - position[i]\n                force[i] += G * mass[i] * mass[j] * normalize(r) / |r|²\n        \n        // Update positions (Verlet integration)\n        for each particle i:\n            acceleration = force[i] / mass[i]\n            velocity[i] += acceleration * dt\n            position[i] += velocity[i] * dt\n        \n        // Detect collisions and accrete\n        for each pair (i, j):\n            if distance(position[i], position[j]) < (radius[i] + radius[j]):\n                // Inelastic collision: conserve momentum\n                newMass = mass[i] + mass[j]\n                newVelocity = (mass[i]*velocity[i] + mass[j]*velocity[j]) / newMass\n                newPosition = (mass[i]*position[i] + mass[j]*position[j]) / newMass\n                newRadius = (radius[i]³ + radius[j]³)^(1/3)\n                \n                // Merge particles\n                mass[i] = newMass\n                velocity[i] = newVelocity\n                position[i] = newPosition\n                radius[i] = newRadius\n                remove(particles, j)\n        \n        // Apply disk drag (friction)\n        for each particle i:\n            velocity[i] *= (1 - dragCoefficient * dt)\n    \n    return particles",
+    "parameters": [
+      {
+        "name": "particle_count",
+        "type": "integer",
+        "range": [100, 10000],
+        "default": 1000,
+        "description": "Initial number of planetesimal particles"
+      },
+      {
+        "name": "initial_mass",
+        "type": "float",
+        "range": [1e15, 1e20],
+        "default": 1e18,
+        "unit": "kg",
+        "description": "Initial mass of each planetesimal"
+      },
+      {
+        "name": "disk_radius",
+        "type": "float",
+        "range": [1.0, 100.0],
+        "default": 30.0,
+        "unit": "AU",
+        "description": "Protoplanetary disk radius"
+      },
+      {
+        "name": "accretion_efficiency",
+        "type": "float",
+        "range": [0.5, 1.0],
+        "default": 0.9,
+        "description": "Mass transfer efficiency in collisions"
+      },
+      {
+        "name": "stellar_mass",
+        "type": "float",
+        "range": [0.1, 10.0],
+        "default": 1.0,
+        "unit": "solar_masses",
+        "description": "Central star mass"
+      },
+      {
+        "name": "snow_line_distance",
+        "type": "float",
+        "range": [1.0, 10.0],
+        "default": 2.7,
+        "unit": "AU",
+        "description": "Snow line distance (affects density)"
+      },
+      {
+        "name": "time_step",
+        "type": "float",
+        "range": [1000, 100000],
+        "default": 10000,
+        "unit": "years",
+        "description": "Simulation time step"
+      }
+    ]
+  },
+  "related_algorithms": [
+    "n_body_simulation",
+    "smoothed_particle_hydrodynamics",
+    "collision_detection_spatial_hash",
+    "barnes_hut_tree"
+  ],
+  "difficulty_level": 5,
+  "estimated_time_minutes": 45,
+  "visualization_hints": {
+    "color_mapping": "Gradient by mass: blue (small), green (medium), red (large); opacity by density",
+    "particle_size": "Radius proportional to mass^(1/3)",
+    "orbital_trails": "Show trajectories to see resonances and stability",
+    "time_compression": "Accelerate visualization to millions of years per second"
+  }
+}

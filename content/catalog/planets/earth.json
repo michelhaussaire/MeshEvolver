@@ -1,0 +1,128 @@
+{
+  "id": "earth",
+  "name": "Tierra",
+  "name_en": "Earth",
+  "type": "terrestrial_planet",
+  "category": "real",
+  "parent_star": "sol",
+  "discovery": {
+    "year": -3000,
+    "note": "Conocida desde la antigüedad como el mundo habitado por la humanidad"
+  },
+  "orbital_properties": {
+    "semi_major_axis": {
+      "value": 1.0,
+      "unit": "au",
+      "km": 149597870.7
+    },
+    "orbital_period": {
+      "value": 365.25,
+      "unit": "days"
+    },
+    "eccentricity": 0.0167,
+    "inclination": {
+      "value": 0.0,
+      "unit": "degrees",
+      "note": "Definido como plano de referencia del Sistema Solar"
+    }
+  },
+  "physical_properties": {
+    "radius": {
+      "value": 6371,
+      "unit": "km",
+      "equatorial": 6378.1,
+      "polar": 6356.8
+    },
+    "mass": {
+      "value": 5.972e24,
+      "unit": "kg"
+    },
+    "gravity": {
+      "value": 9.81,
+      "unit": "m/s²"
+    },
+    "density": {
+      "value": 5.51,
+      "unit": "g/cm³"
+    },
+    "temperature": {
+      "value": 288,
+      "unit": "kelvin",
+      "celsius": 15,
+      "fahrenheit": 59,
+      "note": "Temperatura media global de superficie"
+    }
+  },
+  "atmosphere": {
+    "composition": {
+      "nitrogen": 78.08,
+      "oxygen": 20.95,
+      "argon": 0.93,
+      "carbon_dioxide": 0.04,
+      "unit": "percentage"
+    },
+    "pressure": {
+      "value": 1.0,
+      "unit": "atm",
+      "pascals": 101325
+    },
+    "cloud_coverage": {
+      "value": 0.67,
+      "unit": "fraction",
+      "note": "67% de cobertura promedio global"
+    }
+  },
+  "surface": {
+    "water_coverage": {
+      "value": 0.71,
+      "unit": "fraction",
+      "note": "71% de la superficie está cubierta por agua"
+    },
+    "land_coverage": {
+      "value": 0.29,
+      "unit": "fraction"
+    },
+    "ice_coverage": {
+      "value": 0.03,
+      "unit": "fraction",
+      "note": "Incluye casquetes polares y glaciares"
+    },
+    "biomes": [
+      "tropical_rainforest",
+      "temperate_forest",
+      "boreal_forest",
+      "grassland",
+      "savanna",
+      "desert",
+      "tundra",
+      "wetland",
+      "ocean",
+      "freshwater"
+    ]
+  },
+  "comparison_params": {
+    "genome": {
+      "planet_type": "terrestrial",
+      "radius": 1.0,
+      "temperature": 288,
+      "water_coverage": 0.71,
+      "atmosphere_density": 1.0,
+      "cloud_density": 0.67,
+      "noise": 0.4
+    }
+  },
+  "fun_facts": [
+    "La Tierra es el único planeta conocido que no lleva el nombre de un dios o diosa romano/a griego/a; su nombre proviene del inglés antiguo 'eorþe' que significa 'suelo' o 'tierra'.",
+    "El 71% de la superficie terrestre está cubierta de agua, pero el agua dulce accesible representa solo el 0.4% de todo el agua del planeta.",
+    "La Tierra tiene una luna relativamente grande comparada con su tamaño, lo que estabiliza su inclinación axial y crea las mareas oceánicas.",
+    "El campo magnético terrestre se genera por el movimiento del núcleo externo líquido rico en hierro y níquel, protegiendo al planeta de la radiación solar.",
+    "La Tierra no es perfectamente esférica: es un geoide achatado en los polos y abultado en el ecuador debido a su rotación."
+  ],
+  "sources": [
+    "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+    "https://solarsystem.nasa.gov/earth/overview/",
+    "https://www.esa.int/Science_Exploration/Space_Science/Earth",
+    "https://www.noaa.gov/education",
+    "https://climate.nasa.gov/evidence/"
+  ]
+}

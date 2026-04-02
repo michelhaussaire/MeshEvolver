@@ -1,0 +1,131 @@
+{
+  "id": "jupiter",
+  "name": "Júpiter",
+  "name_en": "Jupiter",
+  "type": "gas_giant",
+  "category": "real",
+  "parent_star": "sol",
+  "discovery": {
+    "year": -1610,
+    "note": "Conocido desde la antigüedad; Galileo Galilei descubrió sus lunas en 1610"
+  },
+  "orbital_properties": {
+    "semi_major_axis": {
+      "value": 5.204,
+      "unit": "au",
+      "km": 778340821
+    },
+    "orbital_period": {
+      "value": 4333,
+      "unit": "days",
+      "earth_years": 11.86
+    },
+    "eccentricity": 0.0489,
+    "inclination": {
+      "value": 1.3,
+      "unit": "degrees"
+    }
+  },
+  "physical_properties": {
+    "radius": {
+      "value": 69911,
+      "unit": "km",
+      "earth_radii": 11.2,
+      "note": "11 veces el radio terrestre"
+    },
+    "mass": {
+      "value": 1.898e27,
+      "unit": "kg",
+      "earth_masses": 317.8
+    },
+    "gravity": {
+      "value": 24.79,
+      "unit": "m/s²",
+      "earth_gravity": 2.53
+    },
+    "density": {
+      "value": 1.33,
+      "unit": "g/cm³",
+      "note": "Menor densidad que el agua (si tuviera un océano lo suficientemente grande, flotaría)"
+    },
+    "temperature": {
+      "value": 165,
+      "unit": "kelvin",
+      "celsius": -108,
+      "fahrenheit": -162,
+      "cloud_tops": {
+        "value": 120,
+        "unit": "kelvin"
+      },
+      "core": {
+        "value": 20000,
+        "unit": "kelvin"
+      }
+    }
+  },
+  "atmosphere": {
+    "composition": {
+      "hydrogen": 89.8,
+      "helium": 10.2,
+      "methane": 0.3,
+      "ammonia": 0.026,
+      "unit": "percentage"
+    },
+    "pressure": {
+      "value": 1000,
+      "unit": "bar",
+      "note": "Presión desconocida en núcleo, capas superiores ~1 bar"
+    },
+    "cloud_coverage": {
+      "value": 1.0,
+      "unit": "fraction",
+      "note": "Cobertura completa de nubes de amoníaco cristalizado"
+    }
+  },
+  "surface": {
+    "water_coverage": {
+      "value": 0.0,
+      "unit": "fraction",
+      "note": "No tiene superficie sólida definida"
+    },
+    "land_coverage": {
+      "value": 0.0,
+      "unit": "fraction"
+    },
+    "ice_coverage": {
+      "value": 0.0,
+      "unit": "fraction"
+    },
+    "biomes": [
+      "cloud_zones",
+      "cloud_belts",
+      "great_red_spot",
+      "polar_regions"
+    ]
+  },
+  "comparison_params": {
+    "genome": {
+      "planet_type": "gas_giant",
+      "radius": 11.2,
+      "temperature": 165,
+      "water_coverage": 0.0,
+      "atmosphere_density": 1000.0,
+      "cloud_density": 1.0,
+      "noise": 0.3
+    }
+  },
+  "fun_facts": [
+    "Júpiter es tan masivo que representa más del doble de la masa de todos los demás planetas del Sistema Solar combinados.",
+    "La Gran Mancha Roja es una tormenta gigantesca que ha existido durante al menos 400 años, con un diámetro de aproximadamente 16,000 km (más grande que la Tierra).",
+    "Júpiter tiene 95 lunas conocidas, incluyendo las cuatro grandes 'lunas galileanas': Ío, Europa, Ganimedes y Calisto. Ganimedes es la luna más grande del Sistema Solar.",
+    "El campo magnético de Júpiter es 20,000 veces más fuerte que el terrestre y genera auroras en sus polos que son miles de veces más brillantes que las de la Tierra.",
+    "Júpiter protege al Sistema Solar interior al actuar como 'aspirador cósmico', capturando o desviando cometas y asteroides con su enorme gravedad."
+  ],
+  "sources": [
+    "https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html",
+    "https://solarsystem.nasa.gov/jupiter/overview/",
+    "https://www.missionjuno.swri.edu/",
+    "https://www.esa.int/Science_Exploration/Space_Science/Juice",
+    "https://hubblesite.org/contents/media/images/2019/45/4583-Image.html"
+  ]
+}

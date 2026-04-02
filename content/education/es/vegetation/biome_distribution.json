@@ -1,0 +1,110 @@
+{
+  "id": "biome_distribution",
+  "category": "vegetation",
+  "title": {
+    "scientific": "Distribución Global de Biomas: Clima, Altitud y Latitud",
+    "algorithmic": "Generación Procedural de Biomas usando Mapas de Altura y Funciones de Perturbación"
+  },
+  "scientific": {
+    "concept": "Los biomas son grandes comunidades ecológicas caracterizadas por tipos de vegetación, clima y fauna. Su distribución global está determinada principalmente por temperatura y precipitación, siguiendo patrones latitudinales y altitudinales. La clasificación de Holdridge y el sistema de Köppen son marcos fundamentales.",
+    "analogy": "Los biomas son como pisos en un rascacielos climático: el suelo tropical (bosque lluvioso) está en la base donde hay calor y humedad abundantes. A medida que 'subes' en latitud o altitud, pasas por bosques templados, taigas y finalmente tundra y hielo en la 'azotea'.",
+    "real_world_example": "Las montañas de los Andes muestran una transición vertical dramática de biomas: desde bosques tropicales húmedos a nivel del mar, pasando por bosques nublados, páramos (praderas de alta montaña), hasta glaciares andinos. Esta transición completa ocurre en apenas 100 km de distancia horizontal.",
+    "physics_formula": {
+      "lapse_rate": "T(z) = T₀ - Γ × z",
+      "potential_evapotranspiration": "PET = 16 × (10T/I)^a",
+      "biotemperature": "BT = Σ(T_mensual) / 12",
+      "variables": {
+        "T(z)": "temperatura a altitud z",
+        "T₀": "temperatura a nivel del mar",
+        "Γ": "tasa de lapsus (6.5°C/km)",
+        "z": "altitud",
+        "PET": "evapotranspiración potencial",
+        "I": "índice de calor",
+        "a": "constante empírica",
+        "BT": "biotemperatura"
+      }
+    },
+    "key_concepts": [
+      "Biotemperatura: temperatura media ajustada para límites biológicos (0-30°C)",
+      "Tasa de lapsus: descenso de temperatura con la altitud (~6.5°C por km)",
+      "Precipitación orográfica: lluvia causada por ascenso forzado sobre montañas",
+      "Sombras de lluvia: zonas secas a sotavento de cordilleras",
+      "Zonas de vida Holdridge: sistema de clasificación basado en biotemperatura y precipitación",
+      "Isotermas: líneas de temperatura constante que determinan límites biomas"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Asignación de biomas basada en múltiples mapas de influencia: temperatura, precipitación, altitud, usando máquinas de estados difusas",
+    "complexity": {
+      "time": "O(n × b) donde n es número de píxeles del mapa y b es número de biomas",
+      "space": "O(n) para almacenar el mapa de biomas resultante"
+    },
+    "why_this_algorithm": "La asignación por umbrales difusos permite transiciones suaves entre biomas (ecotonos) y captura la variabilidad natural. Es más eficiente que simulaciones ecológicas complejas mientras mantiene realismo visual.",
+    "comparison": {
+      "whittaker_plot": "Diagrama de Whittaker es simple pero no considera altitud",
+      "holdridge_hexagons": "Holdridge es completo pero requiere más parámetros",
+      "machine_learning": "ML puede aprender patrones reales pero necesita grandes datasets"
+    },
+    "pseudocode": "function assignBiomes(heightmap, temperatureMap, precipitationMap):\n    for each pixel (x, y):\n        temp = temperatureMap[x,y]\n        precip = precipitationMap[x,y]\n        alt = heightmap[x,y]\n        \n        // Ajustar temperatura por altitud\n        adjustedTemp = temp - (alt * lapseRate)\n        \n        // Calcular puntajes para cada bioma\n        bestBiome = null\n        bestScore = -infinity\n        \n        for each biome in biomeLibrary:\n            // Función de membresía difusa\n            tempScore = gaussian(biome.optimalTemp, biome.tempRange, adjustedTemp)\n            precipScore = gaussian(biome.optimalPrecip, biome.precipRange, precip)\n            \n            // Combinar puntuaciones\n            score = tempScore * precipScore * biome.probability\n            \n            if score > bestScore:\n                bestScore = score\n                bestBiome = biome\n        \n        // Añadir variación procedural\n        noise = perlinNoise(x*0.01, y*0.01) * 0.2\n        if bestScore + noise < threshold:\n            bestBiome = getTransitionBiome(bestBiome, secondBestBiome)\n        \n        biomeMap[x,y] = bestBiome\n    \n    return biomeMap",
+    "parameters": [
+      {
+        "name": "temperature_scale",
+        "type": "float",
+        "range": [-50.0, 50.0],
+        "default": 15.0,
+        "unit": "°C",
+        "description": "Temperatura promedio global"
+      },
+      {
+        "name": "precipitation_scale",
+        "type": "float",
+        "range": [0.0, 5000.0],
+        "default": 1000.0,
+        "unit": "mm/año",
+        "description": "Precipitación anual promedio"
+      },
+      {
+        "name": "altitude_variation",
+        "type": "float",
+        "range": [0.0, 8848.0],
+        "default": 3000.0,
+        "unit": "m",
+        "description": "Rango máximo de altitud"
+      },
+      {
+        "name": "biome_count",
+        "type": "integer",
+        "range": [3, 15],
+        "default": 8,
+        "description": "Número de biomas diferentes a generar"
+      },
+      {
+        "name": "transition_width",
+        "type": "float",
+        "range": [0.0, 0.5],
+        "default": 0.1,
+        "description": "Ancho de zonas de transición entre biomas"
+      },
+      {
+        "name": "noise_influence",
+        "type": "float",
+        "range": [0.0, 1.0],
+        "default": 0.2,
+        "description": "Influencia del ruido en la asignación de biomas"
+      }
+    ]
+  },
+  "related_algorithms": [
+    "whittaker_diagram",
+    "holdridge_classification",
+    "climate_simulation_models",
+    "erosion_hydraulic_terrain"
+  ],
+  "difficulty_level": 3,
+  "estimated_time_minutes": 35,
+  "visualization_hints": {
+    "color_mapping": "Verde oscuro (bosque), verde claro (sabana), amarillo (desierto), blanco (hielo), marrón (montaña)",
+    "texture_blending": "Usar interpolación en zonas de transición",
+    "height_variation": "La vegetación debe variar con altitud en el mismo bioma"
+  }
+}

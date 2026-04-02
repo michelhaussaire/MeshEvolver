@@ -1,0 +1,131 @@
+{
+  "id": "europa",
+  "name": "Europa",
+  "name_en": "Europa",
+  "type": "icy_moon",
+  "category": "real",
+  "parent_star": "sol",
+  "parent_planet": "jupiter",
+  "discovery": {
+    "year": 1610,
+    "discoverer": "Galileo Galilei",
+    "method": "telescopic_observation",
+    "note": "Una de las cuatro lunas galileanas descubiertas en enero de 1610"
+  },
+  "orbital_properties": {
+    "semi_major_axis": {
+      "value": 671100,
+      "unit": "km",
+      "jupiter_radii": 9.6
+    },
+    "orbital_period": {
+      "value": 3.55,
+      "unit": "days"
+    },
+    "eccentricity": 0.009,
+    "inclination": {
+      "value": 0.47,
+      "unit": "degrees"
+    }
+  },
+  "physical_properties": {
+    "radius": {
+      "value": 1560.8,
+      "unit": "km",
+      "earth_radii": 0.245,
+      "note": "90% del tamaño de la Luna terrestre"
+    },
+    "mass": {
+      "value": 4.8e22,
+      "unit": "kg",
+      "earth_masses": 0.008
+    },
+    "gravity": {
+      "value": 1.31,
+      "unit": "m/s²",
+      "earth_gravity": 0.134
+    },
+    "density": {
+      "value": 3.01,
+      "unit": "g/cm³"
+    },
+    "temperature": {
+      "value": 102,
+      "unit": "kelvin",
+      "celsius": -171,
+      "fahrenheit": -276,
+      "equator": {
+        "value": 110,
+        "unit": "kelvin"
+      },
+      "poles": {
+        "value": 50,
+        "unit": "kelvin"
+      }
+    }
+  },
+  "atmosphere": {
+    "composition": {
+      "oxygen": 100,
+      "unit": "percentage",
+      "note": "Atmósfera extremadamente tenue de oxígeno molecular, no respirable"
+    },
+    "pressure": {
+      "value": 1e-12,
+      "unit": "bar",
+      "note": "Presión atmosférica prácticamente inexistente"
+    },
+    "cloud_coverage": {
+      "value": 0.0,
+      "unit": "fraction",
+      "note": "Sin nubes atmosféricas significativas"
+    }
+  },
+  "surface": {
+    "water_coverage": {
+      "value": 1.0,
+      "unit": "fraction",
+      "note": "Océano global bajo capa de hielo de 10-30 km de espesor"
+    },
+    "land_coverage": {
+      "value": 0.0,
+      "unit": "fraction"
+    },
+    "ice_coverage": {
+      "value": 1.0,
+      "unit": "fraction",
+      "note": "Corteza de hielo de agua con grietas y caos terrenal"
+    },
+    "biomes": [
+      "icy_plains",
+      "chaos_terrain",
+      "double_ridges",
+      "subsurface_ocean"
+    ]
+  },
+  "comparison_params": {
+    "genome": {
+      "planet_type": "icy_moon",
+      "radius": 0.245,
+      "temperature": 102,
+      "water_coverage": 1.0,
+      "atmosphere_density": 0.0,
+      "cloud_density": 0.0,
+      "noise": 0.35
+    }
+  },
+  "fun_facts": [
+    "Europa tiene el océano más grande del Sistema Solar en volumen: se estima que contiene el doble de agua que todos los océanos terrestres combinados, bajo una capa de hielo de 10-30 km.",
+    "Las franjas oscuras y claras en la superficie de Europa son grietas en el hielo donde el océano subsuperficial ha llegado a la superficie y se ha congelado, creando patrones de caos terrenal únicos.",
+    "El calentamiento de marea causado por Júpiter mantiene el océano subsuperficial líquido a pesar de las temperaturas extremadamente frías de la superficie.",
+    "Europa es uno de los lugares más prometedores para buscar vida extraterrestre en el Sistema Solar, debido a la presencia de agua líquida, energía geotérmica y elementos químicos necesarios.",
+    "La superficie de Europa es una de las más jóvenes del Sistema Solar, con una edad estimada de 60 millones de años, debido a la renovación constante causada por el océano subsuperficial."
+  ],
+  "sources": [
+    "https://solarsystem.nasa.gov/europa/overview/",
+    "https://europa.nasa.gov/",
+    "https://www.nasa.gov/mission_pages/galileo/",
+    "https://science.nasa.gov/europa-clipper",
+    "https://ui.adsabs.harvard.edu/abs/2015Sci...348.1001R/abstract"
+  ]
+}

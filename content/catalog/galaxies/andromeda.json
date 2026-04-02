@@ -1,0 +1,84 @@
+{
+  "id": "andromeda",
+  "name": "Galaxia de Andrómeda",
+  "name_en": "Andromeda Galaxy",
+  "type": "barred_spiral",
+  "category": "real",
+  "discovery": {
+    "year": 964,
+    "discoverer": "Abd al-Rahman al-Sufi",
+    "method": "naked_eye_observation",
+    "first_telescope_observation": "Observada por primera vez como nebulosa por Simon Marius en 1612"
+  },
+  "physical_properties": {
+    "diameter": {
+      "value": 220000,
+      "unit": "light_years",
+      "note": "Aproximadamente el doble que la Vía Láctea"
+    },
+    "mass": {
+      "value": 1.5e12,
+      "unit": "solar_masses",
+      "range": "0.8-2.0e12"
+    },
+    "star_count": {
+      "value": 1e12,
+      "unit": "stars",
+      "note": "Aproximadamente 1 billón de estrellas"
+    },
+    "age": {
+      "value": 10.0,
+      "unit": "billion_years",
+      "uncertainty": "±2"
+    },
+    "rotation_period": {
+      "value": 250000000,
+      "unit": "years",
+      "note": "Estimado para estrellas en el radio medio"
+    }
+  },
+  "visual_properties": {
+    "color_temperature": {
+      "value": 6000,
+      "unit": "kelvin",
+      "note": "Ligeramente más azulada que la Vía Láctea debido a mayor formación estelar histórica"
+    },
+    "bar_length": {
+      "value": 15000,
+      "unit": "light_years",
+      "note": "Barra galáctica prominente"
+    },
+    "num_arms": 2,
+    "arm_structure": "grand_design",
+    "bulge_size": {
+      "value": 0.25,
+      "unit": "fraction",
+      "note": "25% del radio galáctico"
+    }
+  },
+  "comparison_params": {
+    "genome": {
+      "galaxy_type": "barred_spiral",
+      "num_arms": 2,
+      "arm_tightness": 0.7,
+      "bulge_size": 0.25,
+      "disk_thickness": 0.12,
+      "color_temperature": 6000,
+      "noise": 0.25
+    }
+  },
+  "fun_facts": [
+    "Andrómeda es la galaxia espiral más cercana a la Vía Láctea y está a solo 2.537 millones de años luz de distancia. Es la única galaxia que se puede ver a simple vista desde el hemisferio norte.",
+    "Aunque Andrómeda tiene aproximadamente el doble de estrellas que la Vía Láctea, su masa total es similar, lo que sugiere que contiene más materia oscura nuestra galaxia.",
+    "En el centro de Andrómeda hay un agujero negro supermasivo con una masa de 100-200 millones de masas solares, mucho más masivo que Sagitario A* en el centro de la Vía Láctea.",
+    "Andrómeda es famosa por su disco de polvo gigante que se extiende más allá de sus brazos espirales, formado por colisiones con galaxias satélite.",
+    "Las observaciones del Hubble han revelado que Andrómeda tiene al menos 20 cúmulos globulares orbitando alrededor de su núcleo, comparado con los 150-200 de la Vía Láctea."
+  ],
+  "sources": [
+    "https://hubblesite.org/contents/media/images/2015/02/3487-Image.html",
+    "https://www.nasa.gov/mission_pages/galex/pia15416.html",
+    "https://esahubble.org/images/heic1502a/",
+    "https://ui.adsabs.harvard.edu/abs/2012ApJ...758...11C/abstract",
+    "https://ned.ipac.caltech.edu/level5/March01/Mould/Mould2.html"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "milky_way",
+  "name": "Vía Láctea",
+  "name_en": "Milky Way",
+  "type": "barred_spiral",
+  "category": "real",
+  "discovery": {
+    "year": -1610,
+    "discoverer": "Galileo Galilei",
+    "method": "telescopic_observation",
+    "first_telescope_observation": "Galileo fue el primero en observar que la Vía Láctea está compuesta por incontables estrellas individuales"
+  },
+  "physical_properties": {
+    "diameter": {
+      "value": 105700,
+      "unit": "light_years",
+      "uncertainty": "±10%"
+    },
+    "mass": {
+      "value": 1.5e12,
+      "unit": "solar_masses",
+      "range": "1.0-2.0e12"
+    },
+    "star_count": {
+      "value": 1e11,
+      "unit": "stars",
+      "range": "100-400 billion"
+    },
+    "age": {
+      "value": 13.6,
+      "unit": "billion_years",
+      "uncertainty": "±0.8"
+    },
+    "rotation_period": {
+      "value": 212000000,
+      "unit": "years",
+      "note": "Periodo orbital del Sol alrededor del centro galáctico"
+    }
+  },
+  "visual_properties": {
+    "color_temperature": {
+      "value": 5500,
+      "unit": "kelvin",
+      "note": "Temperatura aproximada de la población estelar predominante"
+    },
+    "bar_length": {
+      "value": 10000,
+      "unit": "light_years"
+    },
+    "num_arms": 4,
+    "arm_structure": "grand_design",
+    "bulge_size": {
+      "value": 0.3,
+      "unit": "fraction",
+      "note": "30% del radio galáctico"
+    }
+  },
+  "comparison_params": {
+    "genome": {
+      "galaxy_type": "barred_spiral",
+      "num_arms": 4,
+      "arm_tightness": 0.6,
+      "bulge_size": 0.3,
+      "disk_thickness": 0.15,
+      "color_temperature": 5500,
+      "noise": 0.3
+    }
+  },
+  "fun_facts": [
+    "La Vía Láctea es una galaxia espiral barrada con cuatro brazos principales: Brazo de Perseo, Brazo de Sagitario, Brazo de Centauro y Brazo de Orión (donde se encuentra nuestro Sistema Solar).",
+    "En el centro de la Vía Láctea existe un agujero negro supermasivo llamado Sagitario A*, con una masa aproximada de 4.1 millones de veces la masa del Sol.",
+    "La palabra 'galaxia' proviene del griego 'gala' (leche), refiriéndose a la apariencia lechosa de la Vía Láctea en el cielo nocturno. Los griegos antiguos creían que era leche derramada por la diosa Hera.",
+    "La Vía Láctea y Andrómeda se están acercando mutuamente a una velocidad de aproximadamente 110 km/s y colisionarán en unos 4.5 mil millones de años, formando una galaxia elíptica gigante.",
+    "Se estima que la Vía Láctea contiene entre 100 y 400 mil millones de estrellas, pero solo podemos ver unos 2,500 con el ojo desnudo en noches oscuras."
+  ],
+  "sources": [
+    "https://nssdc.gsfc.nasa.gov/planetary/factsheet/galaxyfact.html",
+    "https://www.nasa.gov/mission_pages/chandra/news/giant-molecular-cloud.html",
+    "https://hubblesite.org/contents/media/images/2012/01/10379-Image.html",
+    "https://esahubble.org/images/potw1345a/",
+    "https://ui.adsabs.harvard.edu/abs/2009ApJ...692.1075G/abstract"
+  ]
+}

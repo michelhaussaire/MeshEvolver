@@ -1,0 +1,88 @@
+{
+  "id": "m51_whirlpool",
+  "name": "Galaxia del Remolino",
+  "name_en": "Whirlpool Galaxy",
+  "type": "grand_design_spiral",
+  "category": "real",
+  "discovery": {
+    "year": 1773,
+    "discoverer": "Charles Messier",
+    "method": "telescopic_observation",
+    "first_telescope_observation": "Descubierta por Charles Messier mientras observaba el tránsito de un cometa"
+  },
+  "physical_properties": {
+    "diameter": {
+      "value": 60000,
+      "unit": "light_years"
+    },
+    "mass": {
+      "value": 1.6e11,
+      "unit": "solar_masses",
+      "note": "Aproximadamente 160 mil millones de masas solares"
+    },
+    "star_count": {
+      "value": 1e11,
+      "unit": "stars"
+    },
+    "age": {
+      "value": 8.0,
+      "unit": "billion_years"
+    },
+    "rotation_period": {
+      "value": 120000000,
+      "unit": "years",
+      "note": "Periodo orbital a un radio de 10 kpc"
+    }
+  },
+  "visual_properties": {
+    "color_temperature": {
+      "value": 6500,
+      "unit": "kelvin",
+      "note": "Brillante y azulada debido a intensa formación estelar"
+    },
+    "bar_length": {
+      "value": 0,
+      "unit": "light_years",
+      "note": "Galaxia no barrada"
+    },
+    "num_arms": 2,
+    "arm_structure": "grand_design",
+    "bulge_size": {
+      "value": 0.15,
+      "unit": "fraction",
+      "note": "Bulge pequeño comparado con galaxias espirales típicas"
+    }
+  },
+  "comparison_params": {
+    "genome": {
+      "galaxy_type": "grand_design_spiral",
+      "num_arms": 2,
+      "arm_tightness": 0.85,
+      "bulge_size": 0.15,
+      "disk_thickness": 0.1,
+      "color_temperature": 6500,
+      "noise": 0.2
+    }
+  },
+  "companion_galaxy": {
+    "id": "ngc_5195",
+    "name": "NGC 5195",
+    "relationship": "merging",
+    "distance": 500,
+    "unit": "light_years"
+  },
+  "fun_facts": [
+    "La Galaxia del Remolino es un ejemplo clásico de 'galaxia de diseño majestuoso' (grand design spiral), con dos brazos espirales prominentes y simétricos que se extienden desde su núcleo.",
+    "M51 está en interacción gravitacional con su compañera más pequeña NGC 5195, visible en la parte superior de la galaxia. Esta colisión ha desencadenado una ola de formación estelar en los brazos espirales.",
+    "Es una de las galaxias más brillantes del cielo nocturno y puede ser observada con binoculares o telescopios pequeños desde el hemisferio norte, ubicada en la constelación de Canes Venatici.",
+    "Las observaciones del telescopio espacial Hubble han revelado más de 20,000 cúmulos estelares jóvenes en M51, evidencia de la intensa formación estelar causada por la interacción con NGC 5195.",
+    "En 2005, se detectó una supernova en M51 (SN 2005cs), proporcionando a los astrónomos información valiosa sobre la evolución estelar en galaxias distantes."
+  ],
+  "sources": [
+    "https://hubblesite.org/contents/media/images/2005/12/1611-Image.html",
+    "https://www.nasa.gov/mission_pages/chandra/news/09-010.html",
+    "https://esahubble.org/images/heic0506a/",
+    "https://ui.adsabs.harvard.edu/abs/1995ApJ...454..125S/abstract",
+    "https://ned.ipac.caltech.edu/level5/Arp/Arp1.html"
+  ]
+}

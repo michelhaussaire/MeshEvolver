@@ -1,0 +1,112 @@
+{
+  "id": "atmosphere_dynamics",
+  "category": "atmosphere",
+  "title": {
+    "scientific": "Dinámica Atmosférica: Corrientes en Chorro y Circulación Global",
+    "algorithmic": "Simulación de Patrones Atmosféricos con Campos de Vectores y Ruido Procedural"
+  },
+  "scientific": {
+    "concept": "La atmósfera terrestre es un fluido dinámico impulsado por gradientes térmicos, rotación planetaria (efecto Coriolis) y la distribución de masas continentales y oceánicas. Las celdas de circulación atmosférica (Hadley, Ferrel y Polar) determinan los patrones climáticos globales.",
+    "analogy": "La atmósfera funciona como un sistema de calefacción global donde el Ecuador actúa como radiador caliente y los polos como zonas frías. El aire caliente asciende en el Ecuador, se desplaza hacia los polos a gran altura, se enfría y desciende, creando bucles de circulación similares a las celdas de convección en un líquido calentado.",
+    "real_world_example": "La Corriente en Chorro (Jet Stream) es una corriente de aire de alta velocidad (hasta 400 km/h) que fluye de oeste a este en la atmósfera superior. Esta 'ría en el cielo' afecta drásticamente los patrones climáticos y la navegación aérea, causando turbulencias y desviando sistemas de tormentas.",
+    "physics_formula": {
+      "geostrophic_wind": "Vg = (1/ρf) × (∂p/∂n)",
+      "coriolis_parameter": "f = 2Ω sin(φ)",
+      "thermal_wind": "∂V/∂z = (g/fT) × (∂T/∂y)",
+      "rossby_number": "Ro = U/(fL)",
+      "variables": {
+        "Vg": "velocidad geostrófica",
+        "ρ": "densidad del aire",
+        "f": "parámetro de Coriolis",
+        "∂p/∂n": "gradiente de presión perpendicular al flujo",
+        "Ω": "velocidad angular de la Tierra",
+        "φ": "latitud",
+        "U": "velocidad característica",
+        "L": "longitud característica"
+      }
+    },
+    "key_concepts": [
+      "Efecto Coriolis: desviación de masas de aire debido a la rotación terrestre",
+      "Celda de Hadley: circulación tropical entre Ecuador y latitudes ~30°",
+      "Celda de Ferrel: circulación de latitudes medias entre 30°-60°",
+      "Celda Polar: circulación entre 60°-90° de latitud",
+      "Jet Stream: corrientes de alta velocidad en la tropopausa",
+      "Frentes atmosféricos: zonas de transición entre masas de aire de diferente temperatura",
+      "Número de Rossby: relación entre fuerzas de inercia y Coriolis"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Síntesis de campos vectoriales 2D usando ruido Perlin curl-noise para generar flujos incompresibles",
+    "complexity": {
+      "time": "O(n) donde n es el número de píxeles/vóxeles en la malla de simulación",
+      "space": "O(n) para almacenar el campo de velocidades"
+    },
+    "why_this_algorithm": "El curl-noise garantiza que el campo vectorial sea divergence-free (incompresible), una propiedad fundamental de los fluidos atmosféricos. El ruido Perlin proporciona patrones orgánicos y escalables.",
+    "comparison": {
+      "navier_stokes": "Navier-Stokes es físicamente exacto pero computacionalmente costoso para tiempo real",
+      "curl_noise": "Curl-noise es artísticamente convincente y eficiente, aunque no físicamente riguroso",
+      "spectral_methods": "Métodos espectrales capturan grandes escalas pero requieren más memoria"
+    },
+    "pseudocode": "function generateAtmosphereField(time, latitude, windStrength):\n    // Generar ruido Perlin escalado\n    noiseX = perlinNoise(x*scale, y*scale, time*speed)\n    noiseY = perlinNoise(x*scale + 100, y*scale + 100, time*speed)\n    \n    // Aplicar operador curl para garantizar divergence-free\n    // ∂v/∂x - ∂u/∂y = 0\n    dxNoiseY = derivative(noiseY, x)\n    dyNoiseX = derivative(noiseX, y)\n    \n    u = dxNoiseY * windStrength  // Componente x del viento\n    v = -dyNoiseX * windStrength // Componente y del viento\n    \n    // Añadir influencia de latitud (Efecto Coriolis simplificado)\n    coriolisFactor = sin(latitude * π/180)\n    u += coriolisFactor * 0.3\n    \n    // Añadir celdas de circulación grandes\n    hadleyCell = sin(y * π/hadleyHeight) * hadleyStrength\n    v += hadleyCell\n    \n    return vectorField(u, v)",
+    "parameters": [
+      {
+        "name": "wind_speed",
+        "type": "float",
+        "range": [5.0, 200.0],
+        "default": 50.0,
+        "unit": "km/h",
+        "description": "Velocidad del viento promedio"
+      },
+      {
+        "name": "noise_octaves",
+        "type": "integer",
+        "range": [1, 8],
+        "default": 4,
+        "description": "Número de octavas de ruido para detalles"
+      },
+      {
+        "name": "hadley_intensity",
+        "type": "float",
+        "range": [0.0, 1.0],
+        "default": 0.7,
+        "description": "Intensidad de las celdas de circulación"
+      },
+      {
+        "name": "jet_stream_strength",
+        "type": "float",
+        "range": [0.0, 100.0],
+        "default": 30.0,
+        "unit": "m/s",
+        "description": "Fuerza de las corrientes en chorro"
+      },
+      {
+        "name": "turbulence",
+        "type": "float",
+        "range": [0.0, 1.0],
+        "default": 0.3,
+        "description": "Nivel de turbulencia atmosférica"
+      },
+      {
+        "name": "pressure_gradient",
+        "type": "float",
+        "range": [0.001, 0.1],
+        "default": 0.01,
+        "unit": "hPa/km",
+        "description": "Gradiente de presión que impulsa el viento"
+      }
+    ]
+  },
+  "related_algorithms": [
+    "navier_stokes_solver",
+    "curl_noise_flow",
+    "spectral_atmosphere",
+    "cellular_automata_weather"
+  ],
+  "difficulty_level": 4,
+  "estimated_time_minutes": 30,
+  "visualization_hints": {
+    "color_mapping": "Gradiente de azul (frío/alta presión) a rojo (cálido/baja presión)",
+    "vector_display": "Flechas o líneas de flujo para mostrar dirección del viento",
+    "cloud_correlation": "Nubes forman donde hay convergencia y ascenso de aire"
+  }
+}
