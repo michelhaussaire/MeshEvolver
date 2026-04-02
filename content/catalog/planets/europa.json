@@ -3,6 +3,7 @@
   "name": "Europa",
   "type": "moon",
   "category": "real",
+  "description": "Europa es una de las lunas galileanas de Júpiter y uno de los objetos más intrigantes del Sistema Solar. Su superficie de hielo oculta probablemente un océano global de agua líquida bajo la corteza, con el doble de agua que todos los océanos de la Tierra.",
   "discovery": {
     "year": 1610,
     "discoverer": "Galileo Galilei",
@@ -13,13 +14,23 @@
     "mass_unit": "kg",
     "diameter": 3122,
     "diameter_unit": "km",
-    "gravity": 1.31
+    "gravity": 1.31,
+    "mass_kg": 4.8e22,
+    "radius_km": 1560.8,
+    "age_gyr": 4.5,
+    "temperature_k": 102,
+    "density_g_cm3": 3.01,
+    "gravity_m_s2": 1.31
   },
   "visual_properties": {
     "color": "icy_white",
     "atmosphere": true,
     "clouds": false,
-    "water_coverage": 1.0
+    "water_coverage": 1.0,
+    "color_hex": "#E0E0E0",
+    "texture_type": "icy_surface",
+    "brightness": 0.7,
+    "apparent_magnitude": 5.29
   },
   "comparison_params": {
     "planet_genome": {
@@ -30,6 +41,14 @@
   },
   "fun_facts": [
     "Europa likely has a subsurface ocean with more water than Earth",
-    "It is one of the most promising places to search for extraterrestrial life"
-  ]
+    "It is one of the most promising places to search for extraterrestrial life",
+    "La superficie tiene pocas cráteres, indicando actividad geológica reciente",
+    "Las líneas oscuras pueden ser crestas de hielo o fisuras",
+    "La misión Europa Clipper de la NASA explorará este mundo en los 2030s"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/europa/",
+    "esa": "https://www.esa.int/Science_Exploration/Space_Science/Juice",
+    "wikipedia": "https://en.wikipedia.org/wiki/Europa_(moon)"
+  }
 }

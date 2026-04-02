@@ -1,8 +1,9 @@
 {
   "id": "jupiter",
-  "name": "Jupiter",
+  "name": "Júpiter",
   "type": "gas_giant",
   "category": "real",
+  "description": "Júpiter es el planeta más grande del Sistema Solar, una gigante gaseosa con una masa dos veces y media la de todos los demás planetas combinados. Su característica Gran Mancha Roja es una tormenta anticiclónica que ha durado siglos.",
   "discovery": {
     "year": null,
     "discoverer": null,
@@ -13,13 +14,23 @@
     "mass_unit": "kg",
     "diameter": 139820,
     "diameter_unit": "km",
-    "gravity": 24.79
+    "gravity": 24.79,
+    "mass_kg": 1.898e27,
+    "radius_km": 69911,
+    "age_gyr": 4.5,
+    "temperature_k": 165,
+    "density_g_cm3": 1.33,
+    "gravity_m_s2": 24.79
   },
   "visual_properties": {
     "color": "banded_orange_white",
     "atmosphere": true,
     "clouds": true,
-    "water_coverage": 0.0
+    "water_coverage": 0.0,
+    "color_hex": "#D2691E",
+    "texture_type": "banded_gas_giant",
+    "brightness": 0.9,
+    "apparent_magnitude": -2.94
   },
   "comparison_params": {
     "planet_genome": {
@@ -30,6 +41,15 @@
   },
   "fun_facts": [
     "The Great Red Spot is a storm that has raged for at least 400 years",
-    "Jupiter has 95 known moons"
-  ]
+    "Jupiter has 95 known moons",
+    "Júpiter tiene un campo magnético 14 veces más fuerte que el de la Tierra",
+    "El planeta emite más calor del que recibe del Sol",
+    "Su núcleo puede ser de roca o una mezcla de elementos pesados",
+    "Las bandas de nubes alcanzan velocidades de 360 km/h"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/jupiter/",
+    "esa": "https://www.esa.int/Science_Exploration/Space_Science/Jupiter",
+    "wikipedia": "https://en.wikipedia.org/wiki/Jupiter"
+  }
 }
