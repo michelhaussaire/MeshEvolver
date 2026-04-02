@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any
 from datetime import datetime
 
-from backend.src.models.challenges import (
+from src.models.challenges import (
     Challenge,
     ChallengeObjective,
     ChallengeProgress,

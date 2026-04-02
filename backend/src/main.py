@@ -10,7 +10,7 @@ import random
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import challenge router
-from backend.src.routers import challenges
+from src.routers import challenges
 
 try:
     import procedural_graph_core

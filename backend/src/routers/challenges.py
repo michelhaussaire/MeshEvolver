@@ -7,7 +7,7 @@ from typing import Optional
 from fastapi import APIRouter, HTTPException, Query, Header
 from pydantic import Field, field_validator
 
-from backend.src.models.challenges import (
+from src.models.challenges import (
     Challenge,
     ChallengeListItem,
     ChallengeProgress,
@@ -16,8 +16,8 @@ from backend.src.models.challenges import (
     ProgressUpdate,
     ProgressUpdateResponse,
 )
-from backend.src.services.challenge_engine import ChallengeEngine
-from backend.src.config import ADMIN_TOKEN
+from src.services.challenge_engine import ChallengeEngine
+from src.config import ADMIN_TOKEN
 
 # ID validation pattern: lowercase alphanumeric, underscore, hyphen
 ID_PATTERN = r"^[a-z0-9_-]+$"
