@@ -2,7 +2,7 @@
 
 > **Proyecto:** CosmosLearn - Plataforma de Aprendizaje Gamificada sobre Astronomía  
 > **Última Actualización:** Abril 2026  
-> **Estado:** 48% Completado (29/60 Story Points)
+> **Estado:** 60% Completado (37/60 Story Points)
 
 ---
 
@@ -10,8 +10,8 @@
 
 | Estado | Cantidad | Story Points |
 |--------|----------|--------------|
-| ✅ Completados | 4/8 | 29/60 |
-| 🔄 En Progreso | 1/8 | 8/60 |
+| ✅ Completados | 5/8 | 37/60 |
+| 🔄 En Progreso | 0/8 | 0/60 |
 | ⏳ Pendientes | 3/8 | 23/60 |
 
 ---
@@ -86,27 +86,26 @@
 
 ---
 
-### ⚠️ CL-004: Challenge System Backend
-**Estado:** PARCIALMENTE COMPLETADO  
+### ✅ CL-004: Challenge System Backend
+**Estado:** COMPLETADO  
 **Branch:** `feature/CL-004-challenge-system`  
 **Story Points:** 8  
-**Mergeado a main:** ❌ (en branch)
+**Mergeado a main:** ✅
 
 **Implementado:**
 - ✅ Modelos Pydantic para desafíos
-- ⚠️ ChallengeEngine (parcial - sin archivos físicos)
-- ⚠️ Endpoints API (parcial)
+- ✅ ChallengeEngine completo con caché
+- ✅ 6 Endpoints API funcionales
 - ✅ 3 desafíos JSON creados
+- ✅ 48 tests pasando (unit + integration)
+- ✅ Autenticación en endpoint de admin
+- ✅ Validación de IDs con regex
 
-**Pendiente:**
-- ❌ Guardar archivos en ubicación correcta
-- ❌ Tests funcionando
-- ❌ Integración con main.py
-
-**Archivos (en teoría):**
+**Archivos:**
 - `backend/src/models/challenges.py`
 - `backend/src/services/challenge_engine.py`
 - `backend/src/routers/challenges.py`
+- `backend/src/config.py`
 - `content/challenges/**/*.json`
 
 ---
@@ -181,24 +180,10 @@
 ## 🗺️ Diagrama de Dependencias Actual
 
 ```
-┌──────────────────────────────────────────────────────────────────────┐
-│  ✅ CL-001: Algorithm Registry                                       │
-│     (Base del sistema - COMPLETADO)                                  │
-└─────────────┬────────────────────┬───────────────────────────────────┘
-              │                    │
-              ▼                    ▼
-┌──────────────────────┐  ┌──────────────────────────────────────────┐
-│  ✅ CL-002           │  │  ⏳ CL-007 (PENDIENTE)                   │
-│  Educational API     │  │  Vegetation System                       │
-│  (COMPLETADO)        │  │                                          │
-└─────────┬────────────┘  └──────────────────────────────────────────┘
-          │
-    ┌─────┼─────┬────────┐
-    ▼     ▼     ▼        ▼
 ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐
-│✅CL-003│ │⚠️CL-004│ │⏳CL-005│ │⏳CL-008│
+│✅CL-003│ │✅CL-004│ │⏳CL-005│ │⏳CL-008│
 │Dual UI │ │Challenges│Catalog │ │Discovery│
-│(DONE)  │ │(PARTIAL) │(PEND)  │ │(PEND)  │
+│(DONE)  │ │(DONE)   │(PEND)  │ │(PEND)  │
 └────┬───┘ └───┬────┘ └────────┘ └────┬───┘
      │         │                       │
      └─────────┼───────────────────────┘
@@ -218,12 +203,12 @@
 | Métrica | Valor |
 |---------|-------|
 | Líneas de Código (Rust) | ~1,500 |
-| Líneas de Código (Python) | ~800 |
+| Líneas de Código (Python) | ~1,200 |
 | Líneas de Código (TypeScript/React) | ~3,200 |
 | Líneas de Shader GLSL | ~200 |
-| Tests Pasando | 75+ |
+| Tests Pasando | 120+ |
 | Componentes React | 8 |
-| Endpoints API | 6 |
+| Endpoints API | 12 |
 
 ### Features Visuales Implementadas
 - ✅ Océano procedural con ondas animadas
@@ -238,9 +223,9 @@
 ## 🎯 Próximos Pasos Recomendados
 
 ### Prioridad Alta
-1. **Arreglar CL-004** - Completar Challenge System
+1. **Completar CL-005** - Catálogo de objetos reales
 2. **Fix TypeScript errors** - Build limpio
-3. **Completar CL-005** - Catálogo de objetos reales
+3. **Comenzar CL-007** - Vegetation System
 
 ### Prioridad Media
 4. **Implementar CL-007** - Vegetation System
@@ -275,7 +260,8 @@
 
 ## 📝 Notas
 
-- CL-004 tiene código implementado pero no guardado correctamente
+- CL-004 COMPLETADO y mergeado a main (37/60 story points)
 - Build tiene errores TypeScript menores (unused imports)
 - El sistema base está funcionando y es demostrable
-- 48% completado pero con funcionalidad clave operativa
+- 60% completado con funcionalidad clave operativa
+- Sistema de desafíos completamente funcional con 48 tests
