@@ -12,7 +12,8 @@ import {
   Globe,
   LayoutGrid,
   ChevronRight,
-  Library
+  Library,
+  Check
 } from 'lucide-react';
 
 interface GalaxyGenome {
@@ -316,21 +317,31 @@ const GalaxyApp: React.FC = () => {
           {view === 'galaxies' ? (
             population.map((genome, i) => (
               <div key={`galaxy-${generation}-${i}`} className="space-y-4">
-                {galaxies[i] ? (
-                  <GalaxyScene autoRotate={autoRotate}>
-                    <GalaxyViewer 
-                      positions={galaxies[i].positions} 
-                      colors={galaxies[i].colors} 
-                      sizes={galaxies[i].sizes} 
-                      selected={selectedIndices.has(i)}
-                      onClick={() => toggleSelect(i)}
-                    />
-                  </GalaxyScene>
-                ) : (
-                  <div className="w-full aspect-square bg-slate-900/50 animate-pulse rounded-xl flex items-center justify-center border border-slate-800/50">
-                     <Dna className="text-slate-800 animate-spin" size={48} />
-                  </div>
-                )}
+                <div 
+                  className={`relative rounded-2xl overflow-hidden border-2 transition-all cursor-pointer aspect-square ${
+                    selectedIndices.has(i) ? 'border-purple-500 shadow-lg shadow-purple-500/20 scale-[1.02]' : 'border-slate-800 hover:border-slate-700'
+                  }`}
+                  onClick={() => toggleSelect(i)}
+                >
+                  {galaxies[i] ? (
+                    <GalaxyScene autoRotate={autoRotate}>
+                      <GalaxyViewer 
+                        positions={galaxies[i].positions} 
+                        colors={galaxies[i].colors} 
+                        sizes={galaxies[i].sizes} 
+                      />
+                    </GalaxyScene>
+                  ) : (
+                    <div className="w-full h-full bg-slate-900/50 animate-pulse flex items-center justify-center">
+                       <Dna className="text-slate-800 animate-spin" size={48} />
+                    </div>
+                  )}
+                  {selectedIndices.has(i) && (
+                    <div className="absolute top-4 right-4 bg-purple-500 text-white rounded-full p-1 shadow-lg">
+                      <Check size={20} />
+                    </div>
+                  )}
+                </div>
                 <div className="flex justify-between items-center px-2">
                   <div className="flex flex-col gap-0.5">
                     <span className="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Genome Seed</span>
