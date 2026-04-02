@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Astronomical Object Schema",
+  "description": "Schema for real astronomical objects in the catalog",
+  "type": "object",
+  "required": ["id", "name", "type", "category"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["spiral_galaxy", "elliptical_galaxy", "terrestrial_planet", "gas_giant", "moon"]
+    },
+    "category": { "type": "string", "enum": ["real", "theoretical"] },
+    "discovery": {
+      "type": "object",
+      "properties": {
+        "year": { "type": ["integer", "null"] },
+        "discoverer": { "type": ["string", "null"] },
+        "method": { "type": ["string", "null"] }
+      }
+    },
+    "physical_properties": {
+      "type": "object",
+      "properties": {
+        "mass": { "type": "number" },
+        "diameter": { "type": "number" }
+      }
+    },
+    "fun_facts": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

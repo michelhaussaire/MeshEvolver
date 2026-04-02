@@ -1,0 +1,34 @@
+{
+  "id": "spiral_structure",
+  "title": "Spiral Structure Master",
+  "category": "galaxy_crafting",
+  "difficulty": "advanced",
+  "description": "Create a beautiful spiral galaxy with realistic arm structure and core density.",
+  "objectives": [
+    {
+      "id": "arm_structure",
+      "description": "Create well-defined spiral arms",
+      "target_value": 0.8,
+      "type": "minimum"
+    },
+    {
+      "id": "star_distribution",
+      "description": "Achieve realistic star density gradient",
+      "target_value": 0.7,
+      "type": "minimum"
+    },
+    {
+      "id": "core_density",
+      "description": "Create a dense galactic core",
+      "target_value": 0.6,
+      "type": "range"
+    }
+  ],
+  "time_limit_seconds": 600,
+  "reward_points": 500,
+  "unlocks_algorithms": ["worley_f1", "worley_f2_f1"],
+  "educational_content": [
+    "galaxy_formation",
+    "density_waves"
+  ]
+}

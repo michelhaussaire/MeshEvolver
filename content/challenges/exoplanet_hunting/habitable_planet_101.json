@@ -1,0 +1,34 @@
+{
+  "id": "habitable_planet_101",
+  "title": "Habitable Planet 101",
+  "category": "exoplanet_hunting",
+  "difficulty": "beginner",
+  "description": "Create a planet that could support life. Learn about the habitable zone and atmospheric composition.",
+  "objectives": [
+    {
+      "id": "temperature_range",
+      "description": "Maintain surface temperature between 273K and 373K",
+      "target_value": 1.0,
+      "type": "range"
+    },
+    {
+      "id": "water_presence",
+      "description": "Ensure at least 30% water coverage",
+      "target_value": 0.3,
+      "type": "minimum"
+    },
+    {
+      "id": "atmosphere",
+      "description": "Create a moderate atmosphere",
+      "target_value": 1.0,
+      "type": "exists"
+    }
+  ],
+  "time_limit_seconds": 300,
+  "reward_points": 150,
+  "unlocks_algorithms": ["simplex"],
+  "educational_content": [
+    "habitable_zone",
+    "atmosphere_composition"
+  ]
+}

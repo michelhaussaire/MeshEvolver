@@ -1,0 +1,35 @@
+{
+  "id": "europa",
+  "name": "Europa",
+  "type": "moon",
+  "category": "real",
+  "discovery": {
+    "year": 1610,
+    "discoverer": "Galileo Galilei",
+    "method": "Telescopic observation"
+  },
+  "physical_properties": {
+    "mass": 4.8e22,
+    "mass_unit": "kg",
+    "diameter": 3122,
+    "diameter_unit": "km",
+    "gravity": 1.31
+  },
+  "visual_properties": {
+    "color": "icy_white",
+    "atmosphere": true,
+    "clouds": false,
+    "water_coverage": 1.0
+  },
+  "comparison_params": {
+    "planet_genome": {
+      "radius": 0.25,
+      "water_coverage": 1.0,
+      "atmosphere_type": "thin"
+    }
+  },
+  "fun_facts": [
+    "Europa likely has a subsurface ocean with more water than Earth",
+    "It is one of the most promising places to search for extraterrestrial life"
+  ]
+}

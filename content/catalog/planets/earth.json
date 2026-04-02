@@ -1,0 +1,35 @@
+{
+  "id": "earth",
+  "name": "Earth",
+  "type": "terrestrial_planet",
+  "category": "real",
+  "discovery": {
+    "year": null,
+    "discoverer": null,
+    "method": null
+  },
+  "physical_properties": {
+    "mass": 5.97e24,
+    "mass_unit": "kg",
+    "diameter": 12742,
+    "diameter_unit": "km",
+    "gravity": 9.81
+  },
+  "visual_properties": {
+    "color": "blue_green",
+    "atmosphere": true,
+    "clouds": true,
+    "water_coverage": 0.71
+  },
+  "comparison_params": {
+    "planet_genome": {
+      "radius": 1.0,
+      "water_coverage": 0.71,
+      "atmosphere_type": "moderate"
+    }
+  },
+  "fun_facts": [
+    "Earth is the only known planet to support life",
+    "It has a powerful magnetic field protecting it from solar radiation"
+  ]
+}

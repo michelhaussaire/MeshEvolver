@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Dual Explanation Schema",
+  "description": "Schema for dual educational content (scientific + algorithmic)",
+  "type": "object",
+  "required": ["id", "category", "title", "scientific", "algorithmic"],
+  "properties": {
+    "id": { "type": "string" },
+    "category": { 
+      "type": "string",
+      "enum": ["ocean", "atmosphere", "vegetation", "evolution"]
+    },
+    "title": {
+      "type": "object",
+      "properties": {
+        "scientific": { "type": "string" },
+        "algorithmic": { "type": "string" }
+      },
+      "required": ["scientific", "algorithmic"]
+    },
+    "scientific": {
+      "type": "object",
+      "properties": {
+        "concept": { "type": "string" },
+        "analogy": { "type": "string" },
+        "real_world_example": { "type": "string" },
+        "physics_formula": { "type": "string" },
+        "references": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["concept", "analogy", "real_world_example"]
+    },
+    "algorithmic": {
+      "type": "object",
+      "properties": {
+        "algorithm": { "type": "string" },
+        "complexity": {
+          "type": "object",
+          "properties": {
+            "time": { "type": "string" },
+            "space": { "type": "string" }
+          }
+        },
+        "why_this_algorithm": { "type": "string" },
+        "pseudocode": { "type": "string" },
+        "parameters": { "type": "array" }
+      },
+      "required": ["algorithm", "pseudocode"]
+    },
+    "related_algorithms": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

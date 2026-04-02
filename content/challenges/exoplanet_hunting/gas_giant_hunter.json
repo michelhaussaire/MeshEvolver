@@ -1,0 +1,28 @@
+{
+  "id": "gas_giant_hunter",
+  "title": "Gas Giant Hunter",
+  "category": "exoplanet_hunting",
+  "difficulty": "intermediate",
+  "description": "Create a massive gas giant with distinct bands and a storm system.",
+  "objectives": [
+    {
+      "id": "massive_size",
+      "description": "Create a planet with mass > 100 Earth masses",
+      "target_value": 100.0,
+      "type": "minimum"
+    },
+    {
+      "id": "atmospheric_bands",
+      "description": "Generate distinct atmospheric bands",
+      "target_value": 3.0,
+      "type": "minimum"
+    }
+  ],
+  "time_limit_seconds": 420,
+  "reward_points": 250,
+  "unlocks_algorithms": ["fbm"],
+  "educational_content": [
+    "gas_giant_formation",
+    "atmospheric_dynamics"
+  ]
+}

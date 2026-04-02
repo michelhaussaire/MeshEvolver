@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Challenge Schema",
+  "description": "Schema for gamified learning challenges",
+  "type": "object",
+  "required": ["id", "title", "category", "difficulty", "description", "objectives"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "category": {
+      "type": "string",
+      "enum": ["exoplanet_hunting", "galaxy_crafting", "terrain_generation"]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced", "expert"]
+    },
+    "description": { "type": "string" },
+    "objectives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "target_value": { "type": "number" },
+          "type": {
+            "type": "string",
+            "enum": ["minimum", "maximum", "range", "exists"]
+          }
+        },
+        "required": ["id", "description", "target_value", "type"]
+      }
+    },
+    "time_limit_seconds": { "type": "integer" },
+    "reward_points": { "type": "integer" },
+    "unlocks_algorithms": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
