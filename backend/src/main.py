@@ -14,6 +14,9 @@ try:
 except ImportError:
     procedural_graph_core = None
 
+# Import education router
+from src.routers.education import router as education_router
+
 app = FastAPI(
     title="ProceduralGraph AI",
     description="Backend API for procedural mesh generation with Rust core",
@@ -151,6 +154,10 @@ def planet_genome_to_dict(g):
         "seed": g.seed,
         "atmosphere_thickness": g.atmosphere_thickness,
     }
+
+
+# Include education router
+app.include_router(education_router)
 
 
 @app.get("/")

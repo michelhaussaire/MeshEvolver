@@ -1,0 +1,29 @@
+{
+  "id": "andromeda",
+  "name": "Andrómeda",
+  "type": "spiral_galaxy",
+  "description": "La Galaxia de Andrómeda (M31) es la galaxia espiral más cercana a la Vía Láctea y la más grande del Grupo Local. Contiene aproximadamente un billón de estrellas, más del doble que nuestra galaxia. Está situada a unos 2.5 millones de años luz de distancia.",
+  "physical_properties": {
+    "mass_kg": 4.0e42,
+    "radius_km": 1.1e18,
+    "age_gyr": 10.0,
+    "temperature_k": 6000
+  },
+  "visual_properties": {
+    "color_hex": "#FFE4C4",
+    "texture_type": "grand_design_spiral",
+    "brightness": 0.9,
+    "apparent_magnitude": 3.44
+  },
+  "fun_facts": [
+    "Andrómeda se acerca a la Vía Láctea a 110 km/s y colisionarán en 4.5 mil millones de años",
+    "Tiene al menos 20 satélites galácticos en órbita",
+    "Fue la primera galaxia en ser reconocida como un 'universo-isla' separado de la Vía Láctea",
+    "Su núcleo contiene un agujero negro supermasivo de 230 millones de masas solares"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/andromeda/",
+    "esahubble": "https://esahubble.org/images/andromeda/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Andromeda_Galaxy"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "milky_way",
+  "name": "Vía Láctea",
+  "type": "spiral_galaxy",
+  "description": "La Vía Láctea es una galaxia espiral barrada que contiene entre 100,000 y 400,000 millones de estrellas. Tiene un diámetro de aproximadamente 100,000 años luz y una espesor de unos 1,000 años luz en los brazos espirales. Nuestro Sistema Solar se encuentra en el brazo de Orión, a unos 26,000 años luz del centro galáctico.",
+  "physical_properties": {
+    "mass_kg": 2.0e42,
+    "radius_km": 4.73e17,
+    "age_gyr": 13.6,
+    "temperature_k": 5778
+  },
+  "visual_properties": {
+    "color_hex": "#FFF8E7",
+    "texture_type": "spiral_with_bar",
+    "brightness": 1.0,
+    "apparent_magnitude": -20.8
+  },
+  "fun_facts": [
+    "El centro de la galaxia contiene un agujero negro supermasivo llamado Sagitario A* con 4 millones de masas solares",
+    "La Vía Láctea colisionará con la galaxia de Andrómeda en unos 4.5 mil millones de años",
+    "Se forman aproximadamente 3-5 estrellas nuevas por año en nuestra galaxia",
+    "La materia oscura representa aproximadamente el 90% de la masa total de la galaxia"
+  ],
+  "educational_links": {
+    "nasa": "https://science.nasa.gov/milky-way/",
+    "esahubble": "https://esahubble.org/science/galaxies/",
+    "wikipedia": "https://en.wikipedia.org/wiki/Milky_Way"
+  }
+}

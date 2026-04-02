@@ -1,0 +1,73 @@
+{
+  "id": "biome_distribution",
+  "category": "vegetation",
+  "title": {
+    "scientific": "Distribución de Biomas",
+    "algorithmic": "Generación de Ecosistemas Procedurales"
+  },
+  "scientific": {
+    "concept": "Los biomas son comunidades ecológicas grandes definidas por su clima, vegetación y fauna característica. La distribución global de biomas sigue gradientes de temperatura y precipitación, creando franjas latitudinales desde los polos hasta el ecuador.",
+    "analogy": "Un bioma es como un vecindario natural: cada uno tiene sus 'reglas de construcción' (tipo de vegetación) basadas en el 'presupuesto' disponible (agua y temperatura). Los desiertos son barrios pobres en agua, mientras que las selvas tropicales tienen recursos abundantes.",
+    "real_world_example": "El Amazonas contiene el 10% de todas las especies terrestres. Las taigas boreales del norte forman un cinturón forestal continuo de 12 millones de km², el mayor bioma terrestre por área.",
+    "physics_formula": "Whittaker's Biome Classification: f(T, P) donde T=temperatura, P=precipitación",
+    "references": [
+      "Whittaker, R.H. (1975). Communities and Ecosystems",
+      "Holdridge, L.R. (1947). Determination of World Plant Formations"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Whittaker Biome Classification + Voronoi Tessellation",
+    "complexity": {
+      "time": "O(n × log n) para n sitios Voronoi",
+      "space": "O(n)"
+    },
+    "why_this_algorithm": "La clasificación de Whittaker proporciona transiciones suaves entre biomas basadas en ruido Perlin para temperatura/precipitación. Voronoi añade variación local para microclimas y regiones de transición.",
+    "comparison": [
+      {
+        "algorithm": "whittaker",
+        "advantage": "Basado en ecología real, transiciones suaves",
+        "disadvantage": "Simplifica complejidad de microclimas",
+        "best_for": "Mapas continentales realistas"
+      },
+      {
+        "algorithm": "voronoi",
+        "advantage": "Variación local natural, bordes irregulares",
+        "disadvantage": "Sin correlación espacial global",
+        "best_for": "Islas y regiones fragmentadas"
+      }
+    ],
+    "pseudocode": "function generateBiomeMap(width, height, seed):\n    temperature = perlinNoise(width, height, frequency=0.001)\n    precipitation = perlinNoise(width, height, frequency=0.002)\n    \n    biomeMap = new Array[width][height]\n    \n    for y in 0..height:\n        for x in 0..width:\n            T = temperature[x][y]\n            P = precipitation[x][y]\n            biomeMap[x][y] = whittakerClassification(T, P)\n    \n    // Add Voronoi variation for micro-regions\n    sites = generateRandomSites(100, seed)\n    voronoi = computeVoronoi(sites, width, height)\n    \n    return blend(biomeMap, voronoi, ratio=0.3)",
+    "parameters": [
+      {
+        "name": "temperature_scale",
+        "description": "Escala de variación de temperatura",
+        "range": "0.0005 - 0.01",
+        "default": 0.001
+      },
+      {
+        "name": "precipitation_scale",
+        "description": "Escala de variación de precipitación",
+        "range": "0.0005 - 0.01",
+        "default": 0.002
+      },
+      {
+        "name": "voronoi_sites",
+        "description": "Número de sitios para teselación Voronoi",
+        "range": "50 - 500",
+        "default": 100
+      },
+      {
+        "name": "blend_factor",
+        "description": "Factor de mezcla con Voronoi",
+        "range": "0.0 - 1.0",
+        "default": 0.3
+      },
+      {
+        "name": "noise_octaves",
+        "description": "Octavas de ruido para clima",
+        "range": "1 - 8",
+        "default": 4
+      }
+    ]
+  }
+}

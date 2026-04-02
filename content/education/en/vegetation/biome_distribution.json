@@ -1,0 +1,73 @@
+{
+  "id": "biome_distribution",
+  "category": "vegetation",
+  "title": {
+    "scientific": "Biome Distribution",
+    "algorithmic": "Procedural Ecosystem Generation"
+  },
+  "scientific": {
+    "concept": "Biomes are large ecological communities defined by their climate, vegetation, and characteristic fauna. Global biome distribution follows temperature and precipitation gradients, creating latitudinal bands from poles to equator.",
+    "analogy": "A biome is like a natural neighborhood: each has its 'building rules' (vegetation type) based on available 'budget' (water and temperature). Deserts are water-poor neighborhoods, while rainforests have abundant resources.",
+    "real_world_example": "The Amazon contains 10% of all terrestrial species. Northern boreal taigas form a continuous forest belt of 12 million km², the largest terrestrial biome by area.",
+    "physics_formula": "Whittaker's Biome Classification: f(T, P) where T=temperature, P=precipitation",
+    "references": [
+      "Whittaker, R.H. (1975). Communities and Ecosystems",
+      "Holdridge, L.R. (1947). Determination of World Plant Formations"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Whittaker Biome Classification + Voronoi Tessellation",
+    "complexity": {
+      "time": "O(n × log n) for n Voronoi sites",
+      "space": "O(n)"
+    },
+    "why_this_algorithm": "Whittaker classification provides smooth biome transitions based on Perlin noise for temperature/precipitation. Voronoi adds local variation for microclimates and transition regions.",
+    "comparison": [
+      {
+        "algorithm": "whittaker",
+        "advantage": "Based on real ecology, smooth transitions",
+        "disadvantage": "Simplifies microclimate complexity",
+        "best_for": "Realistic continental maps"
+      },
+      {
+        "algorithm": "voronoi",
+        "advantage": "Natural local variation, irregular edges",
+        "disadvantage": "No global spatial correlation",
+        "best_for": "Islands and fragmented regions"
+      }
+    ],
+    "pseudocode": "function generateBiomeMap(width, height, seed):\n    temperature = perlinNoise(width, height, frequency=0.001)\n    precipitation = perlinNoise(width, height, frequency=0.002)\n    \n    biomeMap = new Array[width][height]\n    \n    for y in 0..height:\n        for x in 0..width:\n            T = temperature[x][y]\n            P = precipitation[x][y]\n            biomeMap[x][y] = whittakerClassification(T, P)\n    \n    // Add Voronoi variation for micro-regions\n    sites = generateRandomSites(100, seed)\n    voronoi = computeVoronoi(sites, width, height)\n    \n    return blend(biomeMap, voronoi, ratio=0.3)",
+    "parameters": [
+      {
+        "name": "temperature_scale",
+        "description": "Temperature variation scale",
+        "range": "0.0005 - 0.01",
+        "default": 0.001
+      },
+      {
+        "name": "precipitation_scale",
+        "description": "Precipitation variation scale",
+        "range": "0.0005 - 0.01",
+        "default": 0.002
+      },
+      {
+        "name": "voronoi_sites",
+        "description": "Number of sites for Voronoi tessellation",
+        "range": "50 - 500",
+        "default": 100
+      },
+      {
+        "name": "blend_factor",
+        "description": "Blend factor with Voronoi",
+        "range": "0.0 - 1.0",
+        "default": 0.3
+      },
+      {
+        "name": "noise_octaves",
+        "description": "Noise octaves for climate",
+        "range": "1 - 8",
+        "default": 4
+      }
+    ]
+  }
+}

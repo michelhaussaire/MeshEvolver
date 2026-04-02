@@ -1,0 +1,79 @@
+{
+  "id": "genetic_algorithms",
+  "category": "evolution",
+  "title": {
+    "scientific": "Evolución Natural",
+    "algorithmic": "Algoritmos Genéticos"
+  },
+  "scientific": {
+    "concept": "La evolución natural opera mediante selección natural sobre la variación genética. Los organismos con rasgos adaptativos tienen mayor éxito reproductivo, propagando esos genes. Mutaciones aleatorias proporcionan material genético nuevo sobre el cual actúa la selección.",
+    "analogy": "La evolución es como un algoritmo de búsqueda: la naturaleza 'prueba' millones de soluciones simultáneamente. Los genes son parámetros, la aptitud física es la función objetivo, y la reproducción es la optimización.",
+    "real_world_example": "El pico de los pinzones de Darwin se adaptó a diferentes fuentes de alimento en las Galápagos. Los fósiles de tetrápodos muestran la transición de aletas a patas en 20 millones de años.",
+    "physics_formula": "Fisher's Fundamental Theorem: dX/dt = Var(X) donde X=fitness",
+    "references": [
+      "Darwin, C. (1859). On the Origin of Species",
+      "Holland, J.H. (1975). Adaptation in Natural and Artificial Systems"
+    ]
+  },
+  "algorithmic": {
+    "algorithm": "Genetic Algorithm (GA)",
+    "complexity": {
+      "time": "O(G × P × C) donde G=generaciones, P=población, C=costo fitness",
+      "space": "O(P × L) donde L=longitud genoma"
+    },
+    "why_this_algorithm": "Los Algoritmos Genéticos exploran eficientemente espacios de búsqueda complejos mediante operadores inspirados en la evolución biológica: selección, cruce y mutación. Son robustos ante múltiples óptimos locales.",
+    "comparison": [
+      {
+        "algorithm": "genetic",
+        "advantage": "Exploración global, maneja múltiples objetivos",
+        "disadvantage": "Convergencia lenta, muchos parámetros",
+        "best_for": "Espacios de búsqueda complejos, no diferenciables"
+      },
+      {
+        "algorithm": "gradient_descent",
+        "advantage": "Convergencia rápida cerca de óptimos",
+        "disadvantage": "Se estanca en mínimos locales",
+        "best_for": "Funciones convexas diferenciables"
+      },
+      {
+        "algorithm": "simulated_annealing",
+        "advantage": "Escapa de mínimos locales",
+        "disadvantage": "Programación de temperatura crítica",
+        "best_for": "Optimización combinatorial"
+      }
+    ],
+    "pseudocode": "function geneticAlgorithm(popSize, generations, mutationRate):\n    population = initializeRandom(popSize)\n    \n    for gen in 0..generations:\n        // Evaluate fitness\n        fitness = evaluateFitness(population)\n        \n        // Selection (tournament)\n        selected = tournamentSelection(population, fitness, tournamentSize=3)\n        \n        // Crossover\n        offspring = []\n        for i in 0..popSize/2:\n            parent1, parent2 = selectParents(selected)\n            child1, child2 = crossover(parent1, parent2, rate=0.8)\n            offspring.add(child1, child2)\n        \n        // Mutation\n        for individual in offspring:\n            if random() < mutationRate:\n                mutate(individual)\n        \n        // Elitism: keep best individuals\n        population = elitismMerge(population, offspring, eliteCount=2)\n    \n    return bestIndividual(population)",
+    "parameters": [
+      {
+        "name": "population_size",
+        "description": "Tamaño de la población",
+        "range": "10 - 1000",
+        "default": 100
+      },
+      {
+        "name": "mutation_rate",
+        "description": "Probabilidad de mutación por gen",
+        "range": "0.001 - 0.5",
+        "default": 0.1
+      },
+      {
+        "name": "crossover_rate",
+        "description": "Probabilidad de cruce",
+        "range": "0.5 - 1.0",
+        "default": 0.8
+      },
+      {
+        "name": "elitism_count",
+        "description": "Número de mejores individuos preservados",
+        "range": "1 - 10",
+        "default": 2
+      },
+      {
+        "name": "tournament_size",
+        "description": "Tamaño del torneo de selección",
+        "range": "2 - 10",
+        "default": 3
+      }
+    ]
+  }
+}
