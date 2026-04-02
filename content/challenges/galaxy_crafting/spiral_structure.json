@@ -1,0 +1,41 @@
+{
+  "id": "spiral_structure",
+  "title": "Arquitecto de Galaxias Espirales",
+  "description": "Diseña una galaxia espiral con brazos bien definidos y núcleo central.",
+  "category": "galaxy_crafting",
+  "difficulty": "advanced",
+  "objectives": [
+    {
+      "id": "arm_count",
+      "description": "Crear exactamente 2 o 4 brazos espirales",
+      "validation_type": "range",
+      "target_min": 2,
+      "target_max": 4,
+      "hint_template": "Brazos actuales: {current}. Elige 2 o 4 brazos."
+    },
+    {
+      "id": "core_density",
+      "description": "Densidad del núcleo mayor al 30%",
+      "target_value": 0.3,
+      "validation_type": "threshold",
+      "hint_template": "Densidad del núcleo: {current}%. Necesitas más del 30%."
+    },
+    {
+      "id": "rotation_speed",
+      "description": "Velocidad de rotación entre 50 y 200 km/s",
+      "validation_type": "range",
+      "target_min": 50,
+      "target_max": 200,
+      "hint_template": "Velocidad: {current} km/s. Rango: 50-200 km/s."
+    }
+  ],
+  "time_limit_seconds": 600,
+  "reward_points": 250,
+  "unlocks_algorithms": ["spiral_warp", "density_waves"],
+  "required_algorithms": ["simplex", "fbm_basic"],
+  "hints": [
+    "Las galaxias espirales necesitan un núcleo masivo para mantener la estructura.",
+    "La velocidad de rotación afecta la forma de los brazos.",
+    "Demasiados brazos pueden hacer la galaxia inestable."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "habitable_planet_101",
+  "title": "Cazador de Exoplanetas: Planeta Habitable",
+  "description": "Crea un planeta dentro de la zona habitable con las condiciones adecuadas para la vida.",
+  "category": "exoplanet_hunting",
+  "difficulty": "beginner",
+  "objectives": [
+    {
+      "id": "temperature_range",
+      "description": "Mantener temperatura superficial entre 273K y 373K",
+      "validation_type": "range",
+      "target_min": 273,
+      "target_max": 373,
+      "hint_template": "La temperatura actual es {current}K. Busca estar entre 273K y 373K."
+    },
+    {
+      "id": "water_coverage",
+      "description": "Al menos 50% de cobertura de agua líquida",
+      "target_value": 0.5,
+      "validation_type": "threshold",
+      "hint_template": "Cobertura de agua: {current}%. Necesitas al menos 50%."
+    },
+    {
+      "id": "atmosphere_density",
+      "description": "Densidad atmosférica cercana a la Tierra (±20%)",
+      "target_value": 1.0,
+      "validation_type": "parameter_match",
+      "tolerance": 0.2,
+      "hint_template": "Densidad atmosférica: {current}. Objetivo: 1.0 ± 0.2"
+    }
+  ],
+  "time_limit_seconds": 300,
+  "reward_points": 100,
+  "unlocks_algorithms": ["worley_f1", "voronoi_basic"],
+  "required_algorithms": ["simplex"],
+  "hints": [
+    "Recuerda: la temperatura depende de la distancia a la estrella y la atmósfera.",
+    "El agua necesita presión y temperatura adecuadas para permanecer líquida.",
+    "Una atmósfera demasiado densa puede causar efecto invernadero descontrolado."
+  ]
+}

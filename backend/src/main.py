@@ -9,6 +9,9 @@ import random
 # Ensure the shared library is findable
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+# Import challenge router
+from backend.src.routers import challenges
+
 try:
     import procedural_graph_core
 except ImportError:
@@ -28,6 +31,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include challenges router
+app.include_router(challenges.router, prefix="/api/v2")
 
 
 class GenomeParams(BaseModel):

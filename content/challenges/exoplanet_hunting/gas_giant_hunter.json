@@ -1,0 +1,32 @@
+{
+  "id": "gas_giant_hunter",
+  "title": "Cazador de Gigantes Gaseosos",
+  "description": "Crea un planeta gigante gaseoso con características similares a Júpiter o Saturno.",
+  "category": "exoplanet_hunting",
+  "difficulty": "intermediate",
+  "objectives": [
+    {
+      "id": "mass_threshold",
+      "description": "Masa al menos 10 veces la de la Tierra",
+      "target_value": 10.0,
+      "validation_type": "threshold",
+      "hint_template": "Masa actual: {current} masas terrestres. Necesitas al menos 10."
+    },
+    {
+      "id": "hydrogen_helium_ratio",
+      "description": "Proporción H/He entre 0.7 y 0.9",
+      "validation_type": "range",
+      "target_min": 0.7,
+      "target_max": 0.9,
+      "hint_template": "Proporción H/He: {current}. Rango objetivo: 0.7 - 0.9"
+    }
+  ],
+  "time_limit_seconds": 400,
+  "reward_points": 150,
+  "unlocks_algorithms": ["fbm_advanced", "domain_warping"],
+  "required_algorithms": ["simplex", "worley_f1"],
+  "hints": [
+    "Los gigantes gaseosos necesitan acumular mucha masa rápidamente.",
+    "La composición debe estar dominada por hidrógeno y helio."
+  ]
+}
