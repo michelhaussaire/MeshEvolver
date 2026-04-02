@@ -338,7 +338,9 @@ const GalaxyApp: React.FC = () => {
                       <GalaxyViewer 
                         positions={galaxies[i].positions} 
                         colors={galaxies[i].colors} 
-                        sizes={galaxies[i].sizes} 
+                        sizes={galaxies[i].sizes}
+                        selected={selectedIndices.has(i)}
+                        onClick={() => toggleSelect(i)}
                       />
                     </GalaxyScene>
                   ) : (

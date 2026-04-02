@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Globe, Sparkles, ExternalLink } from 'lucide-react';
+import { Star, Globe, Sparkles } from 'lucide-react';
 import { GalaxyCatalogItem, PlanetCatalogItem } from '../types/catalog';
 
 interface RealObjectCardProps {
