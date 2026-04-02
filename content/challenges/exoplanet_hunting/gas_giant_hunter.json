@@ -1,28 +1,32 @@
 {
   "id": "gas_giant_hunter",
-  "title": "Gas Giant Hunter",
+  "title": "Cazador de Gigantes Gaseosos",
+  "description": "Crea un planeta gigante gaseoso con características similares a Júpiter o Saturno.",
   "category": "exoplanet_hunting",
   "difficulty": "intermediate",
-  "description": "Create a massive gas giant with distinct bands and a storm system.",
   "objectives": [
     {
-      "id": "massive_size",
-      "description": "Create a planet with mass > 100 Earth masses",
-      "target_value": 100.0,
-      "type": "minimum"
+      "id": "mass_threshold",
+      "description": "Masa al menos 10 veces la de la Tierra",
+      "target_value": 10.0,
+      "validation_type": "threshold",
+      "hint_template": "Masa actual: {current} masas terrestres. Necesitas al menos 10."
     },
     {
-      "id": "atmospheric_bands",
-      "description": "Generate distinct atmospheric bands",
-      "target_value": 3.0,
-      "type": "minimum"
+      "id": "hydrogen_helium_ratio",
+      "description": "Proporción H/He entre 0.7 y 0.9",
+      "validation_type": "range",
+      "target_min": 0.7,
+      "target_max": 0.9,
+      "hint_template": "Proporción H/He: {current}. Rango objetivo: 0.7 - 0.9"
     }
   ],
-  "time_limit_seconds": 420,
-  "reward_points": 250,
-  "unlocks_algorithms": ["fbm"],
-  "educational_content": [
-    "gas_giant_formation",
-    "atmospheric_dynamics"
+  "time_limit_seconds": 400,
+  "reward_points": 150,
+  "unlocks_algorithms": ["fbm_advanced", "domain_warping"],
+  "required_algorithms": ["simplex", "worley_f1"],
+  "hints": [
+    "Los gigantes gaseosos necesitan acumular mucha masa rápidamente.",
+    "La composición debe estar dominada por hidrógeno y helio."
   ]
 }
